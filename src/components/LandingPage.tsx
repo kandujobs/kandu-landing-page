@@ -97,6 +97,7 @@ const LandingPage: React.FC = () => {
   const [showEndState, setShowEndState] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState<'left' | 'right'>('right');
   const [showFloatingHeader, setShowFloatingHeader] = useState(false);
+  const [showAllFAQs, setShowAllFAQs] = useState(false);
 
   const handleGetStarted = () => {
     setIsLoading(true);
@@ -813,7 +814,7 @@ const LandingPage: React.FC = () => {
               },
               {
                 question: "How much does Kandu cost?",
-                answer: "Kandu is currently free for all users . Our premium plans start at $9.99/month and include unlimited job applications, advanced AI features, and priority support."
+                answer: "Kandu is currently free for all users. Our premium plans will launch soon, including unlimited job applications, advanced AI features, and priority support."
               },
               {
                 question: "Can I use Kandu for remote jobs only?",
@@ -827,9 +828,23 @@ const LandingPage: React.FC = () => {
                 question: "What if I'm not satisfied with the job matches?",
                 answer: "You can always adjust your preferences, skills, and experience in your profile. The AI continuously learns from your feedback to provide better matches over time."
               }
-            ].map((faq, index) => (
+            ].slice(0, showAllFAQs ? undefined : 3).map((faq, index) => (
               <FAQItem key={index} question={faq.question} answer={faq.answer} index={index} />
             ))}
+          </div>
+          
+          {/* Load More Button - Only show on mobile when not all FAQs are visible */}
+          <div className="md:hidden mt-8 text-center">
+            {!showAllFAQs && (
+              <motion.button
+                onClick={() => setShowAllFAQs(true)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
+                Load More Questions
+              </motion.button>
+            )}
           </div>
         </div>
       </section>
