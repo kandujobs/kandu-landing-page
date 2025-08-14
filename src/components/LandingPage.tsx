@@ -96,6 +96,7 @@ const LandingPage: React.FC = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [showEndState, setShowEndState] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState<'left' | 'right'>('right');
+  const [showFloatingHeader, setShowFloatingHeader] = useState(false);
 
   const handleGetStarted = () => {
     setIsLoading(true);
@@ -133,24 +134,72 @@ const LandingPage: React.FC = () => {
     setSwipeDirection('right');
   };
 
+  // Handle scroll for floating header
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector('section');
+      if (heroSection) {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        setShowFloatingHeader(window.scrollY > heroBottom - 100);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToFAQ = () => {
+    const faqSection = document.querySelector('#faq-section');
+    if (faqSection) {
+      faqSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <div className="text-2xl">🚀</div>
-            <span className="text-xl font-bold text-gray-900">Kandu</span>
+      {/* Floating Header */}
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ 
+          y: showFloatingHeader ? 0 : -100, 
+          opacity: showFloatingHeader ? 1 : 0 
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="fixed top-4 left-4 right-4 z-50 mx-auto max-w-6xl"
+      >
+        <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200/50 px-6 py-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center space-x-2">
+              <div className="text-2xl">🚀</div>
+              <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                Kandu
+              </span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={scrollToFAQ}
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+              >
+                FAQ
+              </button>
+              <button
+                onClick={handleSignIn}
+                disabled={isLoading}
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+              >
+                Sign In
+              </button>
+              <button
+                onClick={handleGetStarted}
+                disabled={isLoading}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-2 px-4 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Get Started
+              </button>
+            </div>
           </div>
-          <button
-            onClick={handleSignIn}
-            disabled={isLoading}
-            className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
-          >
-            Sign In
-          </button>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Hero Section - Compact with Animated Background */}
       <section className="relative py-32 overflow-hidden">
@@ -709,7 +758,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative py-16 overflow-hidden bg-gray-50">
+      <section id="faq-section" className="relative py-16 overflow-hidden bg-gray-50">
         {/* Smooth transition overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-purple-50/50 via-transparent to-transparent pointer-events-none" />
         
