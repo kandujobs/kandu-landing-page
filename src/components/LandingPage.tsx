@@ -606,6 +606,9 @@ const LandingPage: React.FC = () => {
 
       {/* Now in Beta Section */}
       <section className="relative py-24 overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
+        {/* Smooth transition overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-50/50 pointer-events-none" />
+        
         {/* Animated Background */}
         <div className="absolute inset-0">
           <motion.div
@@ -692,27 +695,15 @@ const LandingPage: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Bottom CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-center mt-12"
-          >
-            <motion.button
-              onClick={handleGetStarted}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"
-            >
-              Try AI Resume Builder Free
-            </motion.button>
-          </motion.div>
+
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="relative py-16 overflow-hidden bg-gray-50">
+        {/* Smooth transition overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-purple-600/5 pointer-events-none" />
+        
         {/* Animated Background */}
         <div className="absolute inset-0">
           <motion.div
@@ -784,6 +775,9 @@ const LandingPage: React.FC = () => {
 
       {/* CTA Section - Moved to Bottom */}
       <section className="relative py-16 overflow-hidden">
+        {/* Smooth transition overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-50/50 via-transparent to-transparent pointer-events-none" />
+        
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600">
           {/* Moving Particles */}
