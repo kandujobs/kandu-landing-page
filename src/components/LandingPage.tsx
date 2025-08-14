@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FiArrowRight, FiCheck, FiZap, FiTrendingUp, FiBell, FiPlay } from 'react-icons/fi';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiArrowRight, FiCheck, FiZap, FiTrendingUp, FiBell, FiPlay, FiX, FiHeart } from 'react-icons/fi';
 
 const FEATURES = [
   { 
@@ -25,8 +25,50 @@ const FEATURES = [
   },
 ];
 
+// Mock job data for the interactive cards
+const MOCK_JOBS = [
+  {
+    id: 1,
+    title: "Senior Software Engineer",
+    company: "TechCorp",
+    location: "San Francisco, CA",
+    salary: "$120k - $180k",
+    description: "Build scalable applications and lead technical initiatives in a fast-growing startup environment.",
+    tags: ["React", "Node.js", "AWS", "Remote"]
+  },
+  {
+    id: 2,
+    title: "Product Manager",
+    company: "InnovateLab",
+    location: "New York, NY",
+    salary: "$100k - $150k",
+    description: "Drive product strategy and work with cross-functional teams to deliver exceptional user experiences.",
+    tags: ["Product Strategy", "Agile", "User Research", "Analytics"]
+  },
+  {
+    id: 3,
+    title: "Data Scientist",
+    company: "DataFlow",
+    location: "Austin, TX",
+    salary: "$110k - $160k",
+    description: "Develop machine learning models and analyze complex datasets to drive business decisions.",
+    tags: ["Python", "Machine Learning", "SQL", "Statistics"]
+  },
+  {
+    id: 4,
+    title: "UX Designer",
+    company: "DesignStudio",
+    location: "Seattle, WA",
+    salary: "$90k - $140k",
+    description: "Create beautiful, intuitive user experiences and conduct user research to inform design decisions.",
+    tags: ["Figma", "User Research", "Prototyping", "Design Systems"]
+  }
+];
+
 const LandingPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [currentJobIndex, setCurrentJobIndex] = useState(0);
+  const [showEndState, setShowEndState] = useState(false);
 
   const handleGetStarted = () => {
     setIsLoading(true);
@@ -38,6 +80,27 @@ const LandingPage: React.FC = () => {
     setIsLoading(true);
     // Redirect to the main app sign in
     window.location.href = 'https://app.kandujobs.com';
+  };
+
+  const handleApply = () => {
+    if (currentJobIndex < MOCK_JOBS.length - 1) {
+      setCurrentJobIndex(currentJobIndex + 1);
+    } else {
+      setShowEndState(true);
+    }
+  };
+
+  const handlePass = () => {
+    if (currentJobIndex < MOCK_JOBS.length - 1) {
+      setCurrentJobIndex(currentJobIndex + 1);
+    } else {
+      setShowEndState(true);
+    }
+  };
+
+  const resetCards = () => {
+    setCurrentJobIndex(0);
+    setShowEndState(false);
   };
 
   return (
@@ -59,8 +122,8 @@ const LandingPage: React.FC = () => {
         </div>
       </nav>
 
-      {/* Hero Section - Full Screen with Animated Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Compact with Animated Background */}
+      <section className="relative py-32 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
           {/* Floating Elements */}
@@ -105,7 +168,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 py-20 text-center">
+        <div className="relative z-10 px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -153,8 +216,8 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Don't Search, Swipe Section - Full Screen with Dynamic Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Don't Search, Swipe Section - Compact with Dynamic Background */}
+      <section className="relative py-24 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-purple-50 to-blue-50">
           {/* Moving Grid Pattern */}
@@ -218,17 +281,17 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 py-20 max-w-7xl mx-auto">
+        <div className="relative z-10 px-6 max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Don't search, <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">swipe</span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-8">
               Our AI learns your preferences with every swipe. The more you interact, 
               the smarter it gets at finding your perfect job matches.
             </p>
@@ -239,7 +302,7 @@ const LandingPage: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative max-w-4xl mx-auto mb-16"
+            className="relative max-w-4xl mx-auto mb-12"
           >
             {/* Video Placeholder */}
             <div className="relative bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl overflow-hidden shadow-2xl border border-purple-200/50">
@@ -353,29 +416,10 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Features Section - Full Screen with Animated Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Interactive Job Cards Section */}
+      <section className="relative py-24 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
-          {/* Wave Animation */}
-          <div className="absolute inset-0 overflow-hidden">
-            <motion.div
-              animate={{
-                x: [0, -100, 0],
-              }}
-              transition={{
-                duration: 15,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              className="absolute top-0 left-0 w-full h-full opacity-10"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 50 Q25 25 50 50 T100 50' stroke='%238b5cf6' stroke-width='2' fill='none'/%3E%3C/svg%3E")`,
-                backgroundSize: '100px 100px',
-              }}
-            />
-          </div>
-          
           {/* Floating Bubbles */}
           <motion.div
             animate={{
@@ -405,51 +449,143 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 py-20 max-w-7xl mx-auto">
+        <div className="relative z-10 px-6 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Applying to jobs is hard, we make it easy
+              Try it yourself
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Stop spending hours on applications. Let AI do the heavy lifting while you focus on what matters.
+              Experience how easy it is to find your next job. Click apply or pass on these sample jobs.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {FEATURES.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-purple-100/50 hover:shadow-xl transition-all duration-300 hover:border-purple-200"
-              >
+          {/* Job Card Container */}
+          <div className="relative max-w-md mx-auto">
+            <AnimatePresence mode="wait">
+              {!showEndState ? (
                 <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center text-white mb-4"
+                  key={currentJobIndex}
+                  initial={{ opacity: 0, x: 300, rotate: 15 }}
+                  animate={{ opacity: 1, x: 0, rotate: 0 }}
+                  exit={{ opacity: 0, x: -300, rotate: -15 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100"
                 >
-                  {feature.icon}
+                  {/* Job Header */}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {MOCK_JOBS[currentJobIndex].title}
+                    </h3>
+                    <p className="text-lg text-purple-600 font-semibold mb-1">
+                      {MOCK_JOBS[currentJobIndex].company}
+                    </p>
+                    <p className="text-gray-600 mb-2">
+                      📍 {MOCK_JOBS[currentJobIndex].location}
+                    </p>
+                    <p className="text-green-600 font-semibold">
+                      💰 {MOCK_JOBS[currentJobIndex].salary}
+                    </p>
+                  </div>
+
+                  {/* Job Description */}
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    {MOCK_JOBS[currentJobIndex].description}
+                  </p>
+
+                  {/* Job Tags */}
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {MOCK_JOBS[currentJobIndex].tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-4">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={handlePass}
+                      className="flex-1 bg-gray-100 text-gray-700 font-semibold py-4 px-6 rounded-2xl hover:bg-gray-200 transition-all duration-200 flex items-center justify-center space-x-2"
+                    >
+                      <FiX className="w-5 h-5" />
+                      <span>Pass</span>
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={handleApply}
+                      className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 px-6 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg"
+                    >
+                      <FiHeart className="w-5 h-5" />
+                      <span>Apply</span>
+                    </motion.button>
+                  </div>
+
+                  {/* Progress Indicator */}
+                  <div className="mt-6 text-center">
+                    <p className="text-sm text-gray-500">
+                      {currentJobIndex + 1} of {MOCK_JOBS.length}
+                    </p>
+                  </div>
                 </motion.div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100 text-center"
+                >
+                  <div className="text-6xl mb-6">🎉</div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                    What are you waiting for?
+                  </h3>
+                  <p className="text-gray-600 mb-8 text-lg">
+                    You've seen how easy it is to find great jobs. Now it's time to start your journey!
+                  </p>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleGetStarted}
+                    disabled={isLoading}
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 flex items-center space-x-2 mx-auto shadow-lg"
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                        <span>Redirecting...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Sign Up Free</span>
+                        <FiArrowRight className="w-5 h-5" />
+                      </>
+                    )}
+                  </motion.button>
+                  <button
+                    onClick={resetCards}
+                    className="mt-4 text-purple-600 hover:text-purple-700 font-medium transition-colors"
+                  >
+                    Try again
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Full Screen with Dynamic Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* CTA Section - Compact with Dynamic Background */}
+      <section className="relative py-24 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600">
           {/* Moving Particles */}
@@ -482,7 +618,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 py-20 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
