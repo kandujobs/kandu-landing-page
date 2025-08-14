@@ -50,6 +50,7 @@ const LandingPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [showEndState, setShowEndState] = useState(false);
+  const [swipeDirection, setSwipeDirection] = useState<'left' | 'right'>('right');
 
   const handleGetStarted = () => {
     setIsLoading(true);
@@ -64,6 +65,7 @@ const LandingPage: React.FC = () => {
   };
 
   const handleApply = () => {
+    setSwipeDirection('right'); // Apply swipes right
     if (currentCardIndex < FEATURE_CARDS.length - 1) {
       setCurrentCardIndex(currentCardIndex + 1);
     } else {
@@ -72,6 +74,7 @@ const LandingPage: React.FC = () => {
   };
 
   const handlePass = () => {
+    setSwipeDirection('left'); // Pass swipes left
     if (currentCardIndex < FEATURE_CARDS.length - 1) {
       setCurrentCardIndex(currentCardIndex + 1);
     } else {
@@ -82,6 +85,7 @@ const LandingPage: React.FC = () => {
   const resetCards = () => {
     setCurrentCardIndex(0);
     setShowEndState(false);
+    setSwipeDirection('right');
   };
 
   return (
@@ -193,6 +197,29 @@ const LandingPage: React.FC = () => {
                 Sign In
               </button>
             </div>
+
+            {/* Review Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mt-8 text-center"
+            >
+              <div className="flex items-center justify-center space-x-2 mb-2">
+                {/* Star Rating */}
+                <div className="flex space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-xl">
+                      {i < 4 ? '★' : '☆'}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-gray-700 font-semibold">4.9</span>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Rated by over 2,000+ job seekers
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -353,47 +380,6 @@ const LandingPage: React.FC = () => {
               className="absolute -bottom-4 -right-4 w-6 h-6 bg-blue-500 rounded-full opacity-20"
             />
           </motion.div>
-
-          {/* How It Works */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="grid md:grid-cols-3 gap-8"
-          >
-            {[
-              {
-                number: "1",
-                title: "Swipe Right",
-                description: "Like jobs that interest you. Our AI learns your preferences instantly."
-              },
-              {
-                number: "2", 
-                title: "AI Learns",
-                description: "With every swipe, our algorithm gets smarter about what you want."
-              },
-              {
-                number: "3",
-                title: "Perfect Matches", 
-                description: "Get increasingly better job recommendations tailored to your preferences."
-              }
-            ].map((step, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5 }}
-                className="text-center group"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-all duration-200"
-                >
-                  {step.number}
-                </motion.div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
@@ -438,7 +424,7 @@ const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Applying to jobs is hard, we make it easy
+              Applying is hard, we make it <span className="text-purple-600">easy</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Stop spending hours on applications. Let AI do the heavy lifting while you focus on what matters.
@@ -451,9 +437,13 @@ const LandingPage: React.FC = () => {
               {!showEndState ? (
                 <motion.div
                   key={currentCardIndex}
-                  initial={{ opacity: 0, x: 300, rotate: 15 }}
-                  animate={{ opacity: 1, x: 0, rotate: 0 }}
-                  exit={{ opacity: 0, x: -300, rotate: -15 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ 
+                    opacity: 0, 
+                    x: swipeDirection === 'right' ? 300 : -300, 
+                    rotate: swipeDirection === 'right' ? 15 : -15 
+                  }}
                   transition={{ duration: 0.5 }}
                   className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100"
                 >
@@ -517,12 +507,7 @@ const LandingPage: React.FC = () => {
                     </motion.button>
                   </div>
 
-                  {/* Progress Indicator */}
-                  <div className="mt-6 text-center">
-                    <p className="text-sm text-gray-500">
-                      {currentCardIndex + 1} of {FEATURE_CARDS.length}
-                    </p>
-                  </div>
+
                 </motion.div>
               ) : (
                 <motion.div
@@ -634,6 +619,137 @@ const LandingPage: React.FC = () => {
                   <FiArrowRight className="w-5 h-5" />
                 </>
               )}
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Similar Companies Section */}
+      <section className="relative py-24 overflow-hidden bg-gray-50">
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          <motion.div
+            animate={{ 
+              backgroundPosition: ['0% 0%', '100% 100%'],
+            }}
+            transition={{ 
+              duration: 20, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+            className="absolute inset-0 opacity-5"
+            style={{
+              backgroundImage: `radial-gradient(circle at 20% 80%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #3b82f6 0%, transparent 50%)`,
+              backgroundSize: '100% 100%',
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 px-6 max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Similar to companies you know
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We combine the best features from leading job platforms to give you the ultimate job search experience.
+            </p>
+          </motion.div>
+
+          {/* Companies Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "LinkedIn",
+                description: "Professional networking and job discovery",
+                feature: "Smart job recommendations",
+                icon: "💼",
+                color: "from-blue-500 to-blue-600"
+              },
+              {
+                name: "Indeed",
+                description: "Comprehensive job search platform",
+                feature: "Wide job database",
+                icon: "🔍",
+                color: "from-blue-600 to-indigo-600"
+              },
+              {
+                name: "Tinder",
+                description: "Swipe-based matching interface",
+                feature: "Intuitive swipe experience",
+                icon: "💕",
+                color: "from-pink-500 to-red-500"
+              },
+              {
+                name: "ZipRecruiter",
+                description: "AI-powered job matching",
+                feature: "One-click applications",
+                icon: "⚡",
+                color: "from-green-500 to-green-600"
+              },
+              {
+                name: "Glassdoor",
+                description: "Company insights and reviews",
+                feature: "Transparent company info",
+                icon: "🏢",
+                color: "from-green-600 to-emerald-600"
+              },
+              {
+                name: "Handshake",
+                description: "Student-focused job platform",
+                feature: "Early career opportunities",
+                icon: "🎓",
+                color: "from-purple-500 to-purple-600"
+              }
+            ].map((company, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="flex items-center mb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${company.color} rounded-xl flex items-center justify-center text-white text-2xl mr-4`}>
+                    {company.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900">{company.name}</h3>
+                    <p className="text-sm text-gray-600">{company.description}</p>
+                  </div>
+                </div>
+                <div className="bg-gray-50 rounded-xl p-3">
+                  <p className="text-sm font-medium text-gray-700">
+                    <span className="text-purple-600">✓</span> {company.feature}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-center mt-12"
+          >
+            <p className="text-lg text-gray-600 mb-4">
+              But we're the only platform that combines all these features into one seamless experience.
+            </p>
+            <motion.button
+              onClick={handleGetStarted}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg"
+            >
+              Try Kandu Free
             </motion.button>
           </motion.div>
         </div>
