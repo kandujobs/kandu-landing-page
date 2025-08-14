@@ -156,6 +156,9 @@ const LandingPage: React.FC = () => {
 
       {/* Hero Section - Compact with Animated Background */}
       <section className="relative py-32 overflow-hidden">
+        {/* Smooth transition overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/50 pointer-events-none" />
+        
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
           {/* Floating Elements */}
@@ -273,6 +276,10 @@ const LandingPage: React.FC = () => {
 
       {/* Don't Search, Swipe Section - Compact with Dynamic Background */}
       <section className="relative py-24 overflow-hidden">
+        {/* Smooth transition overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-purple-50/30 pointer-events-none" />
+        
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-purple-50 to-blue-50">
           {/* Moving Grid Pattern */}
@@ -432,6 +439,10 @@ const LandingPage: React.FC = () => {
 
       {/* Interactive Feature Cards Section */}
       <section className="relative py-24 overflow-hidden">
+        {/* Smooth transition overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-50/30 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-purple-50/50 pointer-events-none" />
+        
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
           {/* Floating Bubbles */}
@@ -702,7 +713,7 @@ const LandingPage: React.FC = () => {
       {/* FAQ Section */}
       <section className="relative py-16 overflow-hidden bg-gray-50">
         {/* Smooth transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-purple-600/5 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-50/50 via-transparent to-transparent pointer-events-none" />
         
         {/* Animated Background */}
         <div className="absolute inset-0">
@@ -776,7 +787,7 @@ const LandingPage: React.FC = () => {
       {/* CTA Section - Moved to Bottom */}
       <section className="relative py-16 overflow-hidden">
         {/* Smooth transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50/50 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-50/80 via-transparent to-transparent pointer-events-none" />
         
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600">
