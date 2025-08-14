@@ -165,12 +165,15 @@ const LandingPage: React.FC = () => {
           opacity: showFloatingHeader ? 1 : 0 
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-4 left-4 right-4 z-50 mx-auto max-w-6xl"
+        className="fixed top-4 left-4 right-4 z-50"
       >
         <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200/50 px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <div className="text-2xl">🚀</div>
+            <div className="flex items-center space-x-3">
+              {/* Custom K Logo */}
+              <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center shadow-sm">
+                <span className="text-white font-bold text-lg tracking-tight">K</span>
+              </div>
               <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 Kandu
               </span>
