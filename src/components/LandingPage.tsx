@@ -761,9 +761,9 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq-section" className="relative py-16 overflow-hidden bg-gray-50 w-full">
+      <section id="faq-section" className="relative py-16 overflow-hidden bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-indigo-50/30 w-full">
         {/* Smooth transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-50/50 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-50/30 via-transparent to-transparent pointer-events-none" />
         
         {/* Animated Background */}
         <div className="absolute inset-0">
@@ -837,7 +837,7 @@ const LandingPage: React.FC = () => {
       {/* CTA Section - Moved to Bottom */}
       <section className="relative py-16 overflow-hidden w-full">
         {/* Smooth transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50/80 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-50/40 via-transparent to-transparent pointer-events-none" />
         
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600">
@@ -897,7 +897,7 @@ const LandingPage: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <span>Start Your Free Trial</span>
+                  <span>Get Started for Free</span>
                   <FiArrowRight className="w-5 h-5" />
                 </>
               )}
@@ -907,14 +907,19 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="relative px-4 sm:px-6 lg:px-8 py-12 bg-gray-900 text-white w-full">
+      <footer className="relative px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-br from-gray-800 to-gray-900 text-white w-full">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="text-2xl">🚀</div>
-            <span className="text-xl font-bold">Kandu</span>
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            {/* Custom K Logo */}
+            <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center shadow-sm">
+              <span className="text-white font-bold text-lg tracking-tight">K</span>
+            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              Kandu
+            </span>
           </div>
           <p className="text-gray-400">
-            © 2024 Kandu. All rights reserved.
+            © 2025 Kandu. All rights reserved.
           </p>
         </div>
       </footer>
