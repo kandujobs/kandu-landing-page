@@ -325,7 +325,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Don't Search, Swipe Section - Compact with Dynamic Background */}
-      <section className="relative py-24 overflow-hidden w-full">
+      <section className="relative py-16 overflow-hidden w-full">
         {/* Smooth transition overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-purple-50/30 pointer-events-none" />
@@ -488,7 +488,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Interactive Feature Cards Section */}
-      <section className="relative py-24 overflow-hidden w-full">
+      <section className="relative py-16 overflow-hidden w-full">
         {/* Smooth transition overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-purple-50/30 via-transparent to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-purple-50/50 pointer-events-none" />
@@ -813,7 +813,7 @@ const LandingPage: React.FC = () => {
               },
               {
                 question: "How much does Kandu cost?",
-                answer: "Kandu offers a free trial to get you started. Our premium plans start at $9.99/month and include unlimited job applications, advanced AI features, and priority support."
+                answer: "Kandu is currently free for all users . Our premium plans start at $9.99/month and include unlimited job applications, advanced AI features, and priority support."
               },
               {
                 question: "Can I use Kandu for remote jobs only?",
