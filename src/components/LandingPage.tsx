@@ -253,24 +253,24 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 text-center">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 text-center max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
               Your AI-powered
               <span className="block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 job search assistant
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl sm:max-w-3xl mx-auto px-4">
               Apply to hundreds of jobs automatically. Track your applications. 
               Get smart recommendations. Land your dream job faster.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
               <button
                 onClick={handleGetStarted}
                 disabled={isLoading}
@@ -393,17 +393,17 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-7xl mx-auto">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Don't search, <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">swipe</span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-8">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl sm:max-w-4xl mx-auto mb-8 px-4">
               Our AI learns your preferences with every swipe. The more you interact, 
               the smarter it gets at finding your perfect job matches.
             </p>
@@ -414,7 +414,7 @@ const LandingPage: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative max-w-4xl mx-auto mb-12"
+            className="relative max-w-3xl sm:max-w-4xl mx-auto mb-12 px-4"
           >
             {/* Video Placeholder */}
             <div className="relative bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl overflow-hidden shadow-2xl border border-purple-200/50">
@@ -524,23 +524,23 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-4xl mx-auto">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Applying is hard, we make it <span className="text-purple-600">easy</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
               Stop spending hours on applications. Let AI do the heavy lifting while you focus on what matters.
             </p>
           </motion.div>
 
           {/* Feature Card Container */}
-          <div className="relative max-w-md mx-auto">
+          <div className="relative max-w-sm sm:max-w-md mx-auto px-4">
             <AnimatePresence mode="wait">
               {!showEndState ? (
                 <motion.div
@@ -690,7 +690,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-6xl mx-auto">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -703,10 +703,10 @@ const LandingPage: React.FC = () => {
                 Now in Beta
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Effortless cover letters and resumes with AI
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto px-4">
               Let us do the work and create professional, tailored application materials in seconds.
             </p>
           </motion.div>
@@ -785,23 +785,23 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-4xl mx-auto">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg sm:text-xl text-gray-600 px-4">
               Everything you need to know about Kandu's AI-powered job search platform.
             </p>
           </motion.div>
 
           {/* FAQ Items - Two per row with dropdowns */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {[
               {
                 question: "How does Kandu's AI job matching work?",
@@ -871,16 +871,16 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
               Ready to transform your job search?
             </h2>
-            <p className="text-xl md:text-2xl text-purple-100 mb-8">
+            <p className="text-lg sm:text-xl md:text-2xl text-purple-100 mb-8 px-4">
               Join thousands of job seekers who are already using Kandu to land their dream jobs.
             </p>
             <motion.button
@@ -907,7 +907,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="relative px-6 py-12 bg-gray-900 text-white">
+      <footer className="relative px-4 sm:px-6 lg:px-8 py-12 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="text-2xl">🚀</div>
