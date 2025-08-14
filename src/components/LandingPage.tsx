@@ -1,50 +1,54 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight, FiPlay, FiX, FiHeart } from 'react-icons/fi';
+import { FiArrowRight, FiPlay, FiX, FiHeart, FiZap, FiTrendingUp, FiCheck, FiBell } from 'react-icons/fi';
 
-// Mock job data for the interactive cards
-const MOCK_JOBS = [
+// Feature cards data for the interactive swiper
+const FEATURE_CARDS = [
   {
     id: 1,
-    title: "Senior Software Engineer",
-    company: "TechCorp",
-    location: "San Francisco, CA",
-    salary: "$120k - $180k",
-    description: "Build scalable applications and lead technical initiatives in a fast-growing startup environment.",
-    tags: ["React", "Node.js", "AWS", "Remote"]
+    title: "Auto-apply to jobs",
+    company: "Kandu AI",
+    location: "Everywhere",
+    salary: "Save 10+ hours/week",
+    description: "Let AI apply to hundreds of jobs automatically while you focus on what matters.",
+    icon: <FiZap className="w-8 h-8" />,
+    tags: ["AI-Powered", "Time-Saving", "Automatic"]
   },
   {
     id: 2,
-    title: "Product Manager",
-    company: "InnovateLab",
-    location: "New York, NY",
-    salary: "$100k - $150k",
-    description: "Drive product strategy and work with cross-functional teams to deliver exceptional user experiences.",
-    tags: ["Product Strategy", "Agile", "User Research", "Analytics"]
+    title: "Track your applications",
+    company: "Kandu AI",
+    location: "Centralized Dashboard",
+    salary: "Never lose track",
+    description: "Monitor your application status, responses, and interviews in one place.",
+    icon: <FiTrendingUp className="w-8 h-8" />,
+    tags: ["Organized", "Real-time", "Analytics"]
   },
   {
     id: 3,
-    title: "Data Scientist",
-    company: "DataFlow",
-    location: "Austin, TX",
-    salary: "$110k - $160k",
-    description: "Develop machine learning models and analyze complex datasets to drive business decisions.",
-    tags: ["Python", "Machine Learning", "SQL", "Statistics"]
+    title: "Smart job recommendations",
+    company: "Kandu AI",
+    location: "Personalized",
+    salary: "Perfect matches",
+    description: "Get personalized job suggestions based on your skills and preferences.",
+    icon: <FiCheck className="w-8 h-8" />,
+    tags: ["AI Learning", "Personalized", "Smart"]
   },
   {
     id: 4,
-    title: "UX Designer",
-    company: "DesignStudio",
-    location: "Seattle, WA",
-    salary: "$90k - $140k",
-    description: "Create beautiful, intuitive user experiences and conduct user research to inform design decisions.",
-    tags: ["Figma", "User Research", "Prototyping", "Design Systems"]
+    title: "Search notifications",
+    company: "Kandu AI",
+    location: "Instant Alerts",
+    salary: "Never miss opportunities",
+    description: "Never miss the perfect opportunity with intelligent job alerts.",
+    icon: <FiBell className="w-8 h-8" />,
+    tags: ["Instant", "Smart Alerts", "Opportunities"]
   }
 ];
 
 const LandingPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [currentJobIndex, setCurrentJobIndex] = useState(0);
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [showEndState, setShowEndState] = useState(false);
 
   const handleGetStarted = () => {
@@ -60,23 +64,23 @@ const LandingPage: React.FC = () => {
   };
 
   const handleApply = () => {
-    if (currentJobIndex < MOCK_JOBS.length - 1) {
-      setCurrentJobIndex(currentJobIndex + 1);
+    if (currentCardIndex < FEATURE_CARDS.length - 1) {
+      setCurrentCardIndex(currentCardIndex + 1);
     } else {
       setShowEndState(true);
     }
   };
 
   const handlePass = () => {
-    if (currentJobIndex < MOCK_JOBS.length - 1) {
-      setCurrentJobIndex(currentJobIndex + 1);
+    if (currentCardIndex < FEATURE_CARDS.length - 1) {
+      setCurrentCardIndex(currentCardIndex + 1);
     } else {
       setShowEndState(true);
     }
   };
 
   const resetCards = () => {
-    setCurrentJobIndex(0);
+    setCurrentCardIndex(0);
     setShowEndState(false);
   };
 
@@ -393,7 +397,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Interactive Job Cards Section */}
+      {/* Interactive Feature Cards Section */}
       <section className="relative py-24 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
@@ -434,49 +438,54 @@ const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Try it yourself
+              Applying to jobs is hard, we make it easy
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Experience how easy it is to find your next job. Click apply or pass on these sample jobs.
+              Stop spending hours on applications. Let AI do the heavy lifting while you focus on what matters.
             </p>
           </motion.div>
 
-          {/* Job Card Container */}
+          {/* Feature Card Container */}
           <div className="relative max-w-md mx-auto">
             <AnimatePresence mode="wait">
               {!showEndState ? (
                 <motion.div
-                  key={currentJobIndex}
+                  key={currentCardIndex}
                   initial={{ opacity: 0, x: 300, rotate: 15 }}
                   animate={{ opacity: 1, x: 0, rotate: 0 }}
                   exit={{ opacity: 0, x: -300, rotate: -15 }}
                   transition={{ duration: 0.5 }}
                   className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100"
                 >
-                  {/* Job Header */}
+                  {/* Feature Header */}
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      {MOCK_JOBS[currentJobIndex].title}
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white">
+                        {FEATURE_CARDS[currentCardIndex].icon}
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">
+                      {FEATURE_CARDS[currentCardIndex].title}
                     </h3>
-                    <p className="text-lg text-purple-600 font-semibold mb-1">
-                      {MOCK_JOBS[currentJobIndex].company}
+                    <p className="text-lg text-purple-600 font-semibold mb-1 text-center">
+                      {FEATURE_CARDS[currentCardIndex].company}
                     </p>
-                    <p className="text-gray-600 mb-2">
-                      📍 {MOCK_JOBS[currentJobIndex].location}
+                    <p className="text-gray-600 mb-2 text-center">
+                      📍 {FEATURE_CARDS[currentCardIndex].location}
                     </p>
-                    <p className="text-green-600 font-semibold">
-                      💰 {MOCK_JOBS[currentJobIndex].salary}
+                    <p className="text-green-600 font-semibold text-center">
+                      💰 {FEATURE_CARDS[currentCardIndex].salary}
                     </p>
                   </div>
 
-                  {/* Job Description */}
-                  <p className="text-gray-700 mb-6 leading-relaxed">
-                    {MOCK_JOBS[currentJobIndex].description}
+                  {/* Feature Description */}
+                  <p className="text-gray-700 mb-6 leading-relaxed text-center">
+                    {FEATURE_CARDS[currentCardIndex].description}
                   </p>
 
-                  {/* Job Tags */}
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {MOCK_JOBS[currentJobIndex].tags.map((tag, index) => (
+                  {/* Feature Tags */}
+                  <div className="flex flex-wrap gap-2 mb-8 justify-center">
+                    {FEATURE_CARDS[currentCardIndex].tags.map((tag, index) => (
                       <span
                         key={index}
                         className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
@@ -511,7 +520,7 @@ const LandingPage: React.FC = () => {
                   {/* Progress Indicator */}
                   <div className="mt-6 text-center">
                     <p className="text-sm text-gray-500">
-                      {currentJobIndex + 1} of {MOCK_JOBS.length}
+                      {currentCardIndex + 1} of {FEATURE_CARDS.length}
                     </p>
                   </div>
                 </motion.div>
