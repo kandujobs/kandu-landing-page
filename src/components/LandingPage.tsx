@@ -1,29 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight, FiCheck, FiZap, FiTrendingUp, FiBell, FiPlay, FiX, FiHeart } from 'react-icons/fi';
-
-const FEATURES = [
-  { 
-    icon: <FiZap className="w-6 h-6" />, 
-    title: "Auto-apply to jobs",
-    description: "Let AI apply to hundreds of jobs automatically while you focus on what matters."
-  },
-  { 
-    icon: <FiTrendingUp className="w-6 h-6" />, 
-    title: "Track your applications",
-    description: "Monitor your application status, responses, and interviews in one place."
-  },
-  { 
-    icon: <FiCheck className="w-6 h-6" />, 
-    title: "Smart job recommendations",
-    description: "Get personalized job suggestions based on your skills and preferences."
-  },
-  { 
-    icon: <FiBell className="w-6 h-6" />, 
-    title: "Search notifications",
-    description: "Never miss the perfect opportunity with intelligent job alerts."
-  },
-];
+import { FiArrowRight, FiPlay, FiX, FiHeart } from 'react-icons/fi';
 
 // Mock job data for the interactive cards
 const MOCK_JOBS = [
