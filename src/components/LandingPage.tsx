@@ -624,8 +624,8 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Similar Companies Section */}
-      <section className="relative py-24 overflow-hidden bg-gray-50">
+      {/* Now in Beta Section */}
+      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
         {/* Animated Background */}
         <div className="absolute inset-0">
           <motion.div
@@ -637,7 +637,7 @@ const LandingPage: React.FC = () => {
               repeat: Infinity, 
               ease: "linear" 
             }}
-            className="absolute inset-0 opacity-5"
+            className="absolute inset-0 opacity-10"
             style={{
               backgroundImage: `radial-gradient(circle at 20% 80%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #3b82f6 0%, transparent 50%)`,
               backgroundSize: '100% 100%',
@@ -653,84 +653,63 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
+            <div className="flex items-center justify-center mb-4">
+              <span className="text-purple-500 text-2xl mr-2">✨</span>
+              <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
+                Now in Beta
+              </span>
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Similar to companies you know
+              Effortless cover letters and resumes with AI
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We combine the best features from leading job platforms to give you the ultimate job search experience.
+              Let Jack do the work and create professional, tailored application materials in seconds.
             </p>
           </motion.div>
 
-          {/* Companies Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "LinkedIn",
-                description: "Professional networking and job discovery",
-                feature: "Smart job recommendations",
-                icon: "💼",
-                color: "from-blue-500 to-blue-600"
-              },
-              {
-                name: "Indeed",
-                description: "Comprehensive job search platform",
-                feature: "Wide job database",
-                icon: "🔍",
-                color: "from-blue-600 to-indigo-600"
-              },
-              {
-                name: "Tinder",
-                description: "Swipe-based matching interface",
-                feature: "Intuitive swipe experience",
-                icon: "💕",
-                color: "from-pink-500 to-red-500"
-              },
-              {
-                name: "ZipRecruiter",
-                description: "AI-powered job matching",
-                feature: "One-click applications",
-                icon: "⚡",
-                color: "from-green-500 to-green-600"
-              },
-              {
-                name: "Glassdoor",
-                description: "Company insights and reviews",
-                feature: "Transparent company info",
-                icon: "🏢",
-                color: "from-green-600 to-emerald-600"
-              },
-              {
-                name: "Handshake",
-                description: "Student-focused job platform",
-                feature: "Early career opportunities",
-                icon: "🎓",
-                color: "from-purple-500 to-purple-600"
-              }
-            ].map((company, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              >
-                <div className="flex items-center mb-4">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${company.color} rounded-xl flex items-center justify-center text-white text-2xl mr-4`}>
-                    {company.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">{company.name}</h3>
-                    <p className="text-sm text-gray-600">{company.description}</p>
-                  </div>
+          {/* Two Main Features */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* AI-Generated Resume */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100"
+            >
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl mr-4">
+                  ✨
                 </div>
-                <div className="bg-gray-50 rounded-xl p-3">
-                  <p className="text-sm font-medium text-gray-700">
-                    <span className="text-purple-600">✓</span> {company.feature}
-                  </p>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">AI-Generated Resume</h3>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+              <p className="text-gray-700 leading-relaxed">
+                Simplify the process with resumes tailored to <strong>showcase your skills</strong> and <strong>match job requirements</strong>, all in just a few clicks.
+              </p>
+            </motion.div>
+
+            {/* AI-Generated Cover Letter */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100"
+            >
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl mr-4">
+                  ✨
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">AI-Generated Cover Letter</h3>
+                </div>
+              </div>
+              <p className="text-gray-700 leading-relaxed">
+                Easily create personalized <strong>cover letters</strong> that <strong>highlight your value</strong> and make every application stand out.
+              </p>
+            </motion.div>
           </div>
 
           {/* Bottom CTA */}
@@ -740,16 +719,13 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-center mt-12"
           >
-            <p className="text-lg text-gray-600 mb-4">
-              But we're the only platform that combines all these features into one seamless experience.
-            </p>
             <motion.button
               onClick={handleGetStarted}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
-              Try Kandu Free
+              Try AI Resume Builder Free
             </motion.button>
           </motion.div>
         </div>
