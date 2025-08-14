@@ -555,74 +555,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section - Compact with Dynamic Background */}
-      <section className="relative py-24 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600">
-          {/* Moving Particles */}
-          <div className="absolute inset-0">
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                animate={{
-                  y: [0, -100, 0],
-                  x: [0, Math.random() * 50 - 25, 0],
-                  opacity: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 3 + Math.random() * 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random() * 2,
-                }}
-                className="absolute w-2 h-2 bg-white/30 rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
-              />
-            ))}
-          </div>
-          
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/90 via-blue-600/90 to-indigo-600/90" />
-        </div>
 
-        {/* Content */}
-        <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              Ready to transform your job search?
-            </h2>
-            <p className="text-xl md:text-2xl text-purple-100 mb-8">
-              Join thousands of job seekers who are already using Kandu to land their dream jobs.
-            </p>
-            <motion.button
-              onClick={handleGetStarted}
-              disabled={isLoading}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-purple-600 font-semibold py-4 px-8 rounded-2xl hover:bg-gray-50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 mx-auto shadow-lg hover:shadow-xl"
-            >
-              {isLoading ? (
-                <>
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-purple-600"></div>
-                  <span>Redirecting...</span>
-                </>
-              ) : (
-                <>
-                  <span>Start Your Free Trial</span>
-                  <FiArrowRight className="w-5 h-5" />
-                </>
-              )}
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Now in Beta Section */}
       <section className="relative py-24 overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
@@ -726,6 +659,159 @@ const LandingPage: React.FC = () => {
               className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Try AI Resume Builder Free
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="relative py-24 overflow-hidden bg-gray-50">
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          <motion.div
+            animate={{ 
+              backgroundPosition: ['0% 0%', '100% 100%'],
+            }}
+            transition={{ 
+              duration: 25, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+            className="absolute inset-0 opacity-5"
+            style={{
+              backgroundImage: `radial-gradient(circle at 20% 80%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #3b82f6 0%, transparent 50%)`,
+              backgroundSize: '100% 100%',
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 px-6 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600">
+              Everything you need to know about Kandu's AI-powered job search platform.
+            </p>
+          </motion.div>
+
+          {/* FAQ Items */}
+          <div className="space-y-6">
+            {[
+              {
+                question: "How does Kandu's AI job matching work?",
+                answer: "Our AI learns your preferences through your swipes and interactions. The more you use the platform, the smarter it gets at finding jobs that match your skills, experience, and career goals."
+              },
+              {
+                question: "Is the auto-apply feature really automatic?",
+                answer: "Yes! Once you set up your preferences and resume, our AI can automatically apply to hundreds of jobs that match your criteria. You can review applications before they're sent or let the AI handle everything."
+              },
+              {
+                question: "How much does Kandu cost?",
+                answer: "Kandu offers a free trial to get you started. Our premium plans start at $9.99/month and include unlimited job applications, advanced AI features, and priority support."
+              },
+              {
+                question: "Can I use Kandu for remote jobs only?",
+                answer: "Absolutely! You can filter for remote, hybrid, or on-site positions. Our AI understands location preferences and will prioritize jobs that match your desired work arrangement."
+              },
+              {
+                question: "How accurate are the AI-generated resumes and cover letters?",
+                answer: "Our AI creates professional, tailored materials that highlight your specific skills and experience. Each document is optimized for the job requirements and can be customized before sending."
+              },
+              {
+                question: "What if I'm not satisfied with the job matches?",
+                answer: "You can always adjust your preferences, skills, and experience in your profile. The AI continuously learns from your feedback to provide better matches over time."
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Moved to Bottom */}
+      <section className="relative py-24 overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600">
+          {/* Moving Particles */}
+          <div className="absolute inset-0">
+            {[...Array(20)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  y: [0, -100, 0],
+                  x: [0, Math.random() * 50 - 25, 0],
+                  opacity: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 3 + Math.random() * 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: Math.random() * 2,
+                }}
+                className="absolute w-2 h-2 bg-white/30 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/90 via-blue-600/90 to-indigo-600/90" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+              Ready to transform your job search?
+            </h2>
+            <p className="text-xl md:text-2xl text-purple-100 mb-8">
+              Join thousands of job seekers who are already using Kandu to land their dream jobs.
+            </p>
+            <motion.button
+              onClick={handleGetStarted}
+              disabled={isLoading}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-purple-600 font-semibold py-4 px-8 rounded-2xl hover:bg-gray-50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 mx-auto shadow-lg hover:shadow-xl"
+            >
+              {isLoading ? (
+                <>
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-purple-600"></div>
+                  <span>Redirecting...</span>
+                </>
+              ) : (
+                <>
+                  <span>Start Your Free Trial</span>
+                  <FiArrowRight className="w-5 h-5" />
+                </>
+              )}
             </motion.button>
           </motion.div>
         </div>
