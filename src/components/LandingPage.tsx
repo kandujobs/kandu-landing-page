@@ -72,23 +72,21 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
           <FiChevronDown className="w-5 h-5 text-gray-500" />
         </motion.div>
       </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <div className="px-6 pb-6">
-              <p className="text-gray-700 leading-relaxed">
-                {answer}
-              </p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ 
+          height: isOpen ? "auto" : 0, 
+          opacity: isOpen ? 1 : 0 
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="overflow-hidden"
+      >
+        <div className="px-6 pb-6">
+          <p className="text-gray-700 leading-relaxed">
+            {answer}
+          </p>
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
