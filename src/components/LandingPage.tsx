@@ -165,37 +165,37 @@ const LandingPage: React.FC = () => {
           opacity: showFloatingHeader ? 1 : 0 
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-4 left-4 right-4 z-50 w-[calc(100vw-2rem)] max-w-none"
+        className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100vw-4rem)] max-w-4xl"
       >
-        <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200/50 px-6 py-4">
+        <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200/50 px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               {/* Custom K Logo */}
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center shadow-sm">
-                <span className="text-white font-bold text-lg tracking-tight">K</span>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center shadow-sm">
+                <span className="text-white font-bold text-base sm:text-lg tracking-tight">K</span>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="hidden sm:block text-lg sm:text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 Kandu
               </span>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               <button
                 onClick={scrollToFAQ}
-                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors text-sm sm:text-base"
               >
                 FAQ
               </button>
               <button
                 onClick={handleSignIn}
                 disabled={isLoading}
-                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors text-sm sm:text-base"
               >
                 Sign In
               </button>
               <button
                 onClick={handleGetStarted}
                 disabled={isLoading}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-2 px-4 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-1.5 sm:py-2 px-3 sm:px-4 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
               >
                 Get Started
               </button>
