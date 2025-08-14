@@ -657,7 +657,7 @@ const LandingPage: React.FC = () => {
               Effortless cover letters and resumes with AI
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Let Jack do the work and create professional, tailored application materials in seconds.
+              Let us do the work and create professional, tailored application materials in seconds.
             </p>
           </motion.div>
 
