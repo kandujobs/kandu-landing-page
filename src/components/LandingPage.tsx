@@ -156,7 +156,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full overflow-x-hidden">
       {/* Floating Header */}
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
@@ -165,7 +165,7 @@ const LandingPage: React.FC = () => {
           opacity: showFloatingHeader ? 1 : 0 
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-4 left-4 right-4 z-50"
+        className="fixed top-4 left-4 right-4 z-50 w-[calc(100vw-2rem)] max-w-none"
       >
         <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200/50 px-6 py-4">
           <div className="flex justify-between items-center">
@@ -205,7 +205,7 @@ const LandingPage: React.FC = () => {
       </motion.nav>
 
       {/* Hero Section - Compact with Animated Background */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-32 overflow-hidden w-full">
         {/* Smooth transition overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/50 pointer-events-none" />
         
@@ -325,7 +325,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Don't Search, Swipe Section - Compact with Dynamic Background */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-24 overflow-hidden w-full">
         {/* Smooth transition overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-purple-50/30 pointer-events-none" />
@@ -488,7 +488,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Interactive Feature Cards Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-24 overflow-hidden w-full">
         {/* Smooth transition overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-purple-50/30 via-transparent to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-purple-50/50 pointer-events-none" />
@@ -666,7 +666,7 @@ const LandingPage: React.FC = () => {
 
 
       {/* Now in Beta Section */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
+      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 w-full">
         {/* Smooth transition overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-50/50 pointer-events-none" />
         
@@ -761,7 +761,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq-section" className="relative py-16 overflow-hidden bg-gray-50">
+      <section id="faq-section" className="relative py-16 overflow-hidden bg-gray-50 w-full">
         {/* Smooth transition overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-purple-50/50 via-transparent to-transparent pointer-events-none" />
         
@@ -835,7 +835,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* CTA Section - Moved to Bottom */}
-      <section className="relative py-16 overflow-hidden">
+      <section className="relative py-16 overflow-hidden w-full">
         {/* Smooth transition overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-gray-50/80 via-transparent to-transparent pointer-events-none" />
         
@@ -907,7 +907,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="relative px-4 sm:px-6 lg:px-8 py-12 bg-gray-900 text-white">
+      <footer className="relative px-4 sm:px-6 lg:px-8 py-12 bg-gray-900 text-white w-full">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="text-2xl">🚀</div>
