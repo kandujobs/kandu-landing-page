@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight, FiPlay, FiX, FiHeart, FiZap, FiTrendingUp, FiCheck, FiBell } from 'react-icons/fi';
+import { FiArrowRight, FiPlay, FiX, FiHeart, FiZap, FiTrendingUp, FiCheck, FiBell, FiChevronDown } from 'react-icons/fi';
 
 // Feature cards data for the interactive swiper
 const FEATURE_CARDS = [
@@ -45,6 +45,53 @@ const FEATURE_CARDS = [
     tags: ["Instant", "Smart Alerts", "Opportunities"]
   }
 ];
+
+// FAQ Item Component
+const FAQItem = ({ question, answer, index }: { question: string; answer: string; index: number }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden"
+    >
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+      >
+        <h3 className="text-lg font-bold text-gray-900 pr-4">
+          {question}
+        </h3>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="flex-shrink-0"
+        >
+          <FiChevronDown className="w-5 h-5 text-gray-500" />
+        </motion.div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="px-6 pb-6">
+              <p className="text-gray-700 leading-relaxed">
+                {answer}
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 
 const LandingPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -665,7 +712,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative py-24 overflow-hidden bg-gray-50">
+      <section className="relative py-16 overflow-hidden bg-gray-50">
         {/* Animated Background */}
         <div className="absolute inset-0">
           <motion.div
@@ -691,7 +738,7 @@ const LandingPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Frequently Asked Questions
@@ -701,8 +748,8 @@ const LandingPage: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* FAQ Items */}
-          <div className="space-y-6">
+          {/* FAQ Items - Two per row with dropdowns */}
+          <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 question: "How does Kandu's AI job matching work?",
@@ -729,27 +776,14 @@ const LandingPage: React.FC = () => {
                 answer: "You can always adjust your preferences, skills, and experience in your profile. The AI continuously learns from your feedback to provide better matches over time."
               }
             ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </motion.div>
+              <FAQItem key={index} question={faq.question} answer={faq.answer} index={index} />
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section - Moved to Bottom */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-16 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600">
           {/* Moving Particles */}
