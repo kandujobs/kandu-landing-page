@@ -17,7 +17,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 });
 
 // Add error handling for network issues
-supabase.auth.onAuthStateChange((_event, _session) => {
+supabase.auth.onAuthStateChange((_event: string, _session: any) => {
   // Auth state change handling
 });
 
