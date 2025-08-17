@@ -393,7 +393,7 @@ const LandingPage: React.FC = () => {
                 {/* YouTube Video Embed - Autoplay with Loop */}
                 <iframe
                   className="w-full h-full rounded-3xl"
-                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0&autoplay=1&mute=1&loop=1&playlist=lquEK0bTC4I"
+                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0&autoplay=1&mute=1&loop=1&playlist=lquEK0bTC4I&controls=0&disablekb=1&fs=0&iv_load_policy=3"
                   title="Kandu Demo Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -716,9 +716,9 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq-section" className="relative py-16 overflow-hidden bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-indigo-50/30 w-full">
+      <section id="faq-section" className="relative py-16 overflow-hidden bg-gradient-to-br from-purple-100 via-blue-100 to-indigo-100 w-full">
         {/* Smooth transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-50/30 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-100 via-transparent to-transparent pointer-events-none" />
         
         {/* Animated Background */}
         <div className="absolute inset-0">
@@ -932,7 +932,7 @@ const LandingPage: React.FC = () => {
               <div className="aspect-video">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0&autoplay=1&mute=0&loop=1&playlist=lquEK0bTC4I"
+                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0&autoplay=1&mute=0&loop=1&playlist=lquEK0bTC4I&controls=1&fs=1"
                   title="Kandu Demo Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
