@@ -11,7 +11,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <SEO />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/blog" element={<BlogPage />} />
