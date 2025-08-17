@@ -83,6 +83,18 @@ const blogPosts: BlogPost[] = [
     image: '/blog/job-search-automation.jpg',
     url: '/blog/job-search-automation',
     category: 'Productivity'
+  },
+  {
+    id: 'kandu-faq',
+    title: 'Kandu FAQ: Everything You Need to Know About Our AI Job Platform',
+    description: 'Get answers to all your questions about Kandu\'s AI-powered job search platform. Learn about AI job matching, auto-apply features, pricing, and how to get started.',
+    excerpt: 'Everything you need to know about Kandu\'s AI-powered job search platform. From how our AI works to pricing and features, we\'ve got you covered.',
+    date: '2024-01-20',
+    readTime: '10 min read',
+    image: '/blog/kandu-faq.jpg',
+    url: '/blog/kandu-faq',
+    category: 'FAQ',
+    featured: false
   }
 ];
 

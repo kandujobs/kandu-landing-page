@@ -5,6 +5,7 @@ import AIJobAutomationBlog from './components/AIJobAutomationBlog';
 import InstantApplyWithAI from './components/InstantApplyWithAI';
 import AIJobApplicationTool from './components/AIJobApplicationTool';
 import LinkedInJobAutomation from './components/LinkedInJobAutomation';
+import KanduFAQ from './components/KanduFAQ';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/blog/instant-apply-ai" element={<InstantApplyWithAI />} />
           <Route path="/blog/ai-job-application-tool" element={<AIJobApplicationTool />} />
           <Route path="/blog/linkedin-job-automation" element={<LinkedInJobAutomation />} />
+          <Route path="/blog/kandu-faq" element={<KanduFAQ />} />
         </Routes>
       </div>
     </Router>

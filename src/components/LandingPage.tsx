@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight, FiPlay, FiX, FiHeart, FiZap, FiTrendingUp, FiCheck, FiBell, FiChevronDown } from 'react-icons/fi';
+import { FiArrowRight, FiPlay, FiX, FiHeart, FiZap, FiTrendingUp, FiCheck, FiBell } from 'react-icons/fi';
 
 // Feature cards data for the interactive swiper
 const FEATURE_CARDS = [
@@ -47,49 +47,7 @@ const FEATURE_CARDS = [
 ];
 
 // FAQ Item Component
-const FAQItem = ({ question, answer, index }: { question: string; answer: string; index: number }) => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden"
-    >
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-      >
-        <h3 className="text-lg font-bold text-gray-900 pr-4">
-          {question}
-        </h3>
-        <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="flex-shrink-0"
-        >
-          <FiChevronDown className="w-5 h-5 text-gray-500" />
-        </motion.div>
-      </button>
-      <motion.div
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ 
-          height: isOpen ? "auto" : 0, 
-          opacity: isOpen ? 1 : 0 
-        }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="overflow-hidden"
-      >
-        <div className="px-6 pb-6">
-          <p className="text-gray-700 leading-relaxed">
-            {answer}
-          </p>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-};
 
 const LandingPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -97,7 +55,7 @@ const LandingPage: React.FC = () => {
   const [showEndState, setShowEndState] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState<'left' | 'right'>('right');
   const [showFloatingHeader, setShowFloatingHeader] = useState(false);
-  const [showAllFAQs, setShowAllFAQs] = useState(false);
+
 
   const handleGetStarted = () => {
     setIsLoading(true);
@@ -113,19 +71,21 @@ const LandingPage: React.FC = () => {
 
   const handleApply = () => {
     setSwipeDirection('right'); // Apply swipes right
-    if (currentCardIndex < FEATURE_CARDS.length - 1) {
-      setCurrentCardIndex(currentCardIndex + 1);
+    const nextIndex = currentCardIndex + 1;
+    if (nextIndex < FEATURE_CARDS.length) {
+      setTimeout(() => setCurrentCardIndex(nextIndex), 50);
     } else {
-      setShowEndState(true);
+      setTimeout(() => setShowEndState(true), 50);
     }
   };
 
   const handlePass = () => {
     setSwipeDirection('left'); // Pass swipes left
-    if (currentCardIndex < FEATURE_CARDS.length - 1) {
-      setCurrentCardIndex(currentCardIndex + 1);
+    const nextIndex = currentCardIndex + 1;
+    if (nextIndex < FEATURE_CARDS.length) {
+      setTimeout(() => setCurrentCardIndex(nextIndex), 50);
     } else {
-      setShowEndState(true);
+      setTimeout(() => setShowEndState(true), 50);
     }
   };
 
@@ -150,10 +110,7 @@ const LandingPage: React.FC = () => {
   }, []);
 
   const scrollToFAQ = () => {
-    const faqSection = document.querySelector('#faq-section');
-    if (faqSection) {
-      faqSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.location.href = '/blog';
   };
 
   return (
@@ -801,50 +758,52 @@ const LandingPage: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* FAQ Items - Two per row with dropdowns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          {/* FAQ Preview Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {[
               {
                 question: "How does Kandu's AI job matching work?",
-                answer: "Our AI learns your preferences through your swipes and interactions. The more you use the platform, the smarter it gets at finding jobs that match your skills, experience, and career goals."
+                preview: "Our AI learns your preferences through your swipes and interactions..."
               },
               {
                 question: "Is the auto-apply feature really automatic?",
-                answer: "Yes! Once you set up your preferences and resume, our AI can automatically apply to hundreds of jobs that match your criteria. You can review applications before they're sent or let the AI handle everything."
+                preview: "Yes! Once you set up your preferences and resume, our AI can automatically apply..."
               },
               {
                 question: "How much does Kandu cost?",
-                answer: "Kandu is currently free for all users. Our premium plans will launch soon, including unlimited job applications, advanced AI features, and priority support."
-              },
-              {
-                question: "Can I use Kandu for remote jobs only?",
-                answer: "Absolutely! You can filter for remote, hybrid, or on-site positions. Our AI understands location preferences and will prioritize jobs that match your desired work arrangement."
-              },
-              {
-                question: "How accurate are the AI-generated resumes and cover letters?",
-                answer: "Our AI creates professional, tailored materials that highlight your specific skills and experience. Each document is optimized for the job requirements and can be customized before sending."
-              },
-              {
-                question: "What if I'm not satisfied with the job matches?",
-                answer: "You can always adjust your preferences, skills, and experience in your profile. The AI continuously learns from your feedback to provide better matches over time."
+                preview: "Kandu is currently free for all users. Our premium plans will launch soon..."
               }
-            ].slice(0, showAllFAQs ? undefined : 3).map((faq, index) => (
-              <FAQItem key={index} question={faq.question} answer={faq.answer} index={index} />
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 cursor-pointer"
+                onClick={() => window.location.href = '/blog'}
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
+                <p className="text-gray-600 text-sm">{faq.preview}</p>
+                <div className="mt-4 flex items-center text-purple-600 font-semibold text-sm">
+                  <span>Read full answer</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </motion.div>
             ))}
           </div>
           
-          {/* Load More Button - Only show on mobile when not all FAQs are visible */}
-          <div className="md:hidden mt-8 text-center">
-            {!showAllFAQs && (
-              <motion.button
-                onClick={() => setShowAllFAQs(true)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"
-              >
-                Load More Questions
-              </motion.button>
-            )}
+          {/* View All FAQ Button */}
+          <div className="text-center">
+            <motion.button
+              onClick={() => window.location.href = '/blog'}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-3 px-8 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              View All FAQ Articles
+            </motion.button>
           </div>
         </div>
       </section>
