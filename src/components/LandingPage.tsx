@@ -639,68 +639,192 @@ const LandingPage: React.FC = () => {
 
         {/* Content */}
         <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          {/* Animated Beta Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-center mb-8"
           >
-            <div className="flex items-center justify-center mb-4">
-              <span className="text-purple-500 text-2xl mr-2">✨</span>
-              <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
-                Now in Beta
-              </span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Effortless cover letters and resumes with AI
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto px-4">
-              Let us do the work and create professional, tailored application materials in seconds.
-            </p>
+            <motion.div
+              animate={{ 
+                rotate: [0, 10, -10, 0],
+                scale: [1, 1.05, 1]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity, 
+                repeatDelay: 3,
+                ease: "easeInOut"
+              }}
+              className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full shadow-lg"
+            >
+              <span className="text-xl mr-2">✨</span>
+              <span className="font-bold text-sm">Now in Beta</span>
+              <span className="text-xl ml-2">✨</span>
+            </motion.div>
           </motion.div>
 
-          {/* Two Main Features */}
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Animated Headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-center mb-6"
+          >
+            <motion.h2 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+            >
+              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Effortless
+              </span>
+              <br />
+              <span className="text-gray-900">cover letters and resumes</span>
+              <br />
+              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                with AI
+              </span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            >
+              Let us do the work and create professional, tailored application materials in seconds.
+            </motion.p>
+          </motion.div>
+
+          {/* Animated Feature Cards */}
+          <div className="grid md:grid-cols-2 gap-8 mt-16">
             {/* AI-Generated Resume */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100"
+              initial={{ opacity: 0, y: 50, rotateY: -15 }}
+              animate={{ opacity: 1, y: 0, rotateY: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              whileHover={{ 
+                y: -10, 
+                rotateY: 5,
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+              className="group relative bg-gradient-to-br from-white to-purple-50 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-purple-200 overflow-hidden"
             >
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl mr-4">
-                  ✨
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">AI-Generated Resume</h3>
-                </div>
+              {/* Animated Background Elements */}
+              <motion.div
+                animate={{ 
+                  rotate: [0, 360],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ 
+                  duration: 8, 
+                  repeat: Infinity, 
+                  ease: "linear"
+                }}
+                className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-20"
+              />
+              
+              <div className="relative z-10">
+                <motion.div 
+                  className="flex items-center mb-6"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <motion.div 
+                    className="w-20 h-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white text-4xl mr-6 shadow-lg"
+                    animate={{ 
+                      rotate: [0, 5, -5, 0],
+                      scale: [1, 1.05, 1]
+                    }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity, 
+                      ease: "easeInOut"
+                    }}
+                  >
+                    ✨
+                  </motion.div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">AI-Generated Resume</h3>
+                    <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+                  </div>
+                </motion.div>
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  className="text-gray-700 leading-relaxed text-lg"
+                >
+                  Simplify the process with resumes tailored to <strong className="text-purple-600">showcase your skills</strong> and <strong className="text-blue-600">match job requirements</strong>, all in just a few clicks.
+                </motion.p>
               </div>
-              <p className="text-gray-700 leading-relaxed">
-                Simplify the process with resumes tailored to <strong>showcase your skills</strong> and <strong>match job requirements</strong>, all in just a few clicks.
-              </p>
             </motion.div>
 
             {/* AI-Generated Cover Letter */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100"
+              initial={{ opacity: 0, y: 50, rotateY: 15 }}
+              animate={{ opacity: 1, y: 0, rotateY: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              whileHover={{ 
+                y: -10, 
+                rotateY: -5,
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+              className="group relative bg-gradient-to-br from-white to-blue-50 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-blue-200 overflow-hidden"
             >
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl mr-4">
-                  ✨
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">AI-Generated Cover Letter</h3>
-                </div>
+              {/* Animated Background Elements */}
+              <motion.div
+                animate={{ 
+                  rotate: [360, 0],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ 
+                  duration: 8, 
+                  repeat: Infinity, 
+                  ease: "linear"
+                }}
+                className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full opacity-20"
+              />
+              
+              <div className="relative z-10">
+                <motion.div 
+                  className="flex items-center mb-6"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <motion.div 
+                    className="w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-4xl mr-6 shadow-lg"
+                    animate={{ 
+                      rotate: [0, -5, 5, 0],
+                      scale: [1, 1.05, 1]
+                    }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity, 
+                      ease: "easeInOut",
+                      delay: 0.5
+                    }}
+                  >
+                    ✨
+                  </motion.div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">AI-Generated Cover Letter</h3>
+                    <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+                  </div>
+                </motion.div>
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.4 }}
+                  className="text-gray-700 leading-relaxed text-lg"
+                >
+                  Easily create personalized <strong className="text-blue-600">cover letters</strong> that <strong className="text-indigo-600">highlight your value</strong> and make every application stand out.
+                </motion.p>
               </div>
-              <p className="text-gray-700 leading-relaxed">
-                Easily create personalized <strong>cover letters</strong> that <strong>highlight your value</strong> and make every application stand out.
-              </p>
             </motion.div>
           </div>
 
