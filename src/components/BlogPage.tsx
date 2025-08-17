@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FiCalendar, FiClock, FiArrowRight } from 'react-icons/fi';
+import { FiCalendar, FiClock, FiArrowRight, FiChevronRight, FiStar, FiUsers, FiTrendingUp } from 'react-icons/fi';
 import SEO from './SEO';
 
 interface BlogPost {
@@ -123,11 +123,28 @@ const blogPosts: BlogPost[] = [
 ];
 
 const BlogPage: React.FC = () => {
+  const [showAllPosts, setShowAllPosts] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  
   const featuredPost = blogPosts.find(post => post.featured);
   const regularPosts = blogPosts.filter(post => !post.featured);
+  
+  const handleShowMore = () => {
+    setShowAllPosts(true);
+    // Smooth scroll to show more posts
+    setTimeout(() => {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollTo({
+          left: scrollContainerRef.current.scrollWidth,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
 
   return (
     <>
+
       <SEO 
         title="Job Search Blog - AI Automation, Career Tips & Job Search Strategies | Kandu"
         description="Discover the latest insights on AI job automation, career tips, and job search strategies. Learn how to leverage technology for career success with our expert blog."
@@ -271,51 +288,136 @@ const BlogPage: React.FC = () => {
               <p className="text-gray-600">Discover the latest insights on job search automation and career advancement.</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {regularPosts.map((post, index) => (
-                <motion.article
-                  key={post.id}
+            <div className="relative">
+              <div 
+                ref={scrollContainerRef}
+                className="flex gap-6 overflow-x-auto pb-6"
+                style={{ 
+                  scrollbarWidth: 'none', 
+                  msOverflowStyle: 'none'
+                }}
+              >
+                {regularPosts.map((post, index) => (
+                  <motion.article
+                    key={post.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex-shrink-0 w-80"
+                  >
+                    <div className="h-48 bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center">
+                      <div className="text-4xl text-purple-600">📄</div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <span className="bg-purple-100 text-purple-600 px-2 py-1 rounded-full text-xs font-medium">
+                          {post.category}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-4 text-sm text-gray-500">
+                          <div className="flex items-center space-x-1">
+                            <FiCalendar className="w-4 h-4" />
+                            <span>{new Date(post.date).toLocaleDateString()}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <FiClock className="w-4 h-4" />
+                            <span>{post.readTime}</span>
+                          </div>
+                        </div>
+                        <a 
+                          href={post.url}
+                          className="text-purple-600 hover:text-purple-700 font-semibold text-sm flex items-center space-x-1"
+                        >
+                          <span>Read</span>
+                          <FiArrowRight className="w-4 h-4" />
+                        </a>
+                      </div>
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
+              
+              {!showAllPosts && (
+                <div className="text-center mt-8">
+                  <motion.button
+                    onClick={handleShowMore}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-200 flex items-center space-x-2 mx-auto"
+                  >
+                    <span>Show More Articles</span>
+                    <FiChevronRight className="w-5 h-5" />
+                  </motion.button>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Resources Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-12"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Resources</h2>
+              <p className="text-gray-600">Essential tools and guides to accelerate your job search success.</p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <FiStar className="w-8 h-8" />,
+                  title: "Resume Builder",
+                  description: "Create ATS-optimized resumes that get you noticed by recruiters and hiring managers.",
+                  link: "https://app.kandujobs.com",
+                  linkText: "Build Resume"
+                },
+                {
+                  icon: <FiUsers className="w-8 h-8" />,
+                  title: "Job Search Automation",
+                  description: "Automate your job search and save 20+ hours per week with AI-powered tools.",
+                  link: "https://app.kandujobs.com",
+                  linkText: "Start Automating"
+                },
+                {
+                  icon: <FiTrendingUp className="w-8 h-8" />,
+                  title: "Career Coaching",
+                  description: "Get personalized career advice and interview preparation from industry experts.",
+                  link: "https://app.kandujobs.com",
+                  linkText: "Get Coaching"
+                }
+              ].map((resource, index) => (
+                <motion.div
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow overflow-hidden"
+                  className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-200 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="h-48 bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center">
-                    <div className="text-4xl text-purple-600">📄</div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <span className="bg-purple-100 text-purple-600 px-2 py-1 rounded-full text-xs font-medium">
-                        {post.category}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4 text-sm text-gray-500">
-                        <div className="flex items-center space-x-1">
-                          <FiCalendar className="w-4 h-4" />
-                          <span>{new Date(post.date).toLocaleDateString()}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <FiClock className="w-4 h-4" />
-                          <span>{post.readTime}</span>
-                        </div>
-                      </div>
-                      <a 
-                        href={post.url}
-                        className="text-purple-600 hover:text-purple-700 font-semibold text-sm flex items-center space-x-1"
-                      >
-                        <span>Read</span>
-                        <FiArrowRight className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </div>
-                </motion.article>
+                  <div className="text-purple-600 mb-4">{resource.icon}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{resource.title}</h3>
+                  <p className="text-gray-600 mb-6">{resource.description}</p>
+                  <a 
+                    href={resource.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-700 font-semibold transition-colors"
+                  >
+                    <span>{resource.linkText}</span>
+                    <FiArrowRight className="w-4 h-4" />
+                  </a>
+                </motion.div>
               ))}
             </div>
           </div>
