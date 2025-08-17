@@ -128,29 +128,24 @@ const ContactPage: React.FC = () => {
       />
       
       <div className="min-h-screen bg-white">
-        {/* Header Navigation */}
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        {/* Header */}
+        <header className="bg-white shadow-sm border-b">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <a href="/" className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">K</span>
-                  </div>
-                  <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                    Kandu
-                  </span>
-                </a>
+                <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">K</span>
+                </div>
+                <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                  Kandu Contact
+                </span>
               </div>
-              <nav className="flex items-center space-x-6">
-                <a href="/" className="text-gray-600 hover:text-purple-600 transition-colors">Home</a>
-                <a href="/blog" className="text-gray-600 hover:text-purple-600 transition-colors">Blog</a>
-                <a href="/about" className="text-gray-600 hover:text-purple-600 transition-colors">About</a>
-                <a href="/contact" className="text-purple-600 font-semibold">Contact</a>
-                <a href="https://app.kandujobs.com" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-200">
-                  Try Kandu Free
-                </a>
-              </nav>
+              <a 
+                href="/" 
+                className="text-gray-600 hover:text-purple-600 transition-colors"
+              >
+                ← Back to Home
+              </a>
             </div>
           </div>
         </header>
