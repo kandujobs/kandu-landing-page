@@ -275,7 +275,7 @@ const LandingPage: React.FC = () => {
                           <span className="text-gray-300">★</span>
                           <span 
                             className="absolute top-0 left-0 text-yellow-400 overflow-hidden"
-                            style={{ width: '80%' }}
+                            style={{ width: '75%' }}
                           >
                             ★
                           </span>
