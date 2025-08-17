@@ -224,7 +224,7 @@ const LandingPage: React.FC = () => {
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl sm:max-w-3xl mx-auto px-4">
-              Apply to hundreds of jobs automatically. Track your applications. 
+              Apply to hundreds of jobs. Track your applications. 
               Get smart recommendations. Land your dream job faster.
             </p>
             
