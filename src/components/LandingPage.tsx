@@ -267,8 +267,20 @@ const LandingPage: React.FC = () => {
                 {/* Star Rating */}
                 <div className="flex space-x-1">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">
-                      {i < 4 ? '★' : '☆'}
+                    <span key={i} className="relative text-xl">
+                      {i < 4 ? (
+                        <span className="text-yellow-400">★</span>
+                      ) : (
+                        <>
+                          <span className="text-gray-300">★</span>
+                          <span 
+                            className="absolute top-0 left-0 text-yellow-400 overflow-hidden"
+                            style={{ width: '80%' }}
+                          >
+                            ★
+                          </span>
+                        </>
+                      )}
                     </span>
                   ))}
                 </div>
