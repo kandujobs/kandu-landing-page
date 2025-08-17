@@ -95,6 +95,18 @@ const blogPosts: BlogPost[] = [
     url: '/blog/kandu-faq',
     category: 'FAQ',
     featured: false
+  },
+  {
+    id: 'resume-optimization-ai',
+    title: 'AI Resume Optimization: Boost Your Job Applications with Smart Resume Enhancement',
+    description: 'Learn how AI resume optimization can transform your job search. Discover AI tools that analyze, enhance, and tailor your resume for maximum impact and better job opportunities.',
+    excerpt: 'Discover how AI resume optimization can transform your job search. Learn how intelligent algorithms analyze, enhance, and tailor your resume for maximum impact.',
+    date: '2024-01-20',
+    readTime: '9 min read',
+    image: '/blog/resume-optimization-ai.jpg',
+    url: '/blog/resume-optimization-ai',
+    category: 'Resume Optimization',
+    featured: false
   }
 ];
 
