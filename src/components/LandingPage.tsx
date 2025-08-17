@@ -55,7 +55,7 @@ const LandingPage: React.FC = () => {
   const [showEndState, setShowEndState] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState<'left' | 'right'>('right');
   const [showFloatingHeader, setShowFloatingHeader] = useState(false);
-  const [showVideoModal, setShowVideoModal] = useState(false);
+
 
 
   const handleGetStarted = () => {
@@ -399,19 +399,9 @@ const LandingPage: React.FC = () => {
                   playsInline
                   preload="auto"
                 >
-                  <source src="/demo-video.mp4" type="video/mp4" />
+                  <source src="/Kandu.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                
-                {/* Click to expand overlay */}
-                <div 
-                  className="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-10 hover:bg-opacity-20 transition-all duration-200"
-                  onClick={() => setShowVideoModal(true)}
-                >
-                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium bg-black bg-opacity-50 px-3 py-1 rounded-full">
-                    Click to expand
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -894,49 +884,7 @@ const LandingPage: React.FC = () => {
         </div>
       </footer>
 
-      {/* Video Modal */}
-      <AnimatePresence>
-        {showVideoModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-            onClick={() => setShowVideoModal(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setShowVideoModal(false)}
-                className="absolute top-4 right-4 z-10 w-8 h-8 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-75 transition-all"
-              >
-                <FiX className="w-4 h-4" />
-              </button>
-              
-              {/* Video Player - MP4 with Controls */}
-              <div className="aspect-video">
-                <video
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  loop
-                  playsInline
-                  controls
-                  preload="auto"
-                >
-                  <source src="/demo-video.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
     </div>
   );
 };
