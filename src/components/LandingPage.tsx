@@ -390,30 +390,23 @@ const LandingPage: React.FC = () => {
             {/* Demo Video */}
             <div className="relative bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl overflow-hidden shadow-2xl border border-purple-200/50">
               <div className="aspect-video relative">
-                {/* YouTube Video Embed */}
+                {/* YouTube Video Embed - Autoplay with Loop */}
                 <iframe
                   className="w-full h-full rounded-3xl"
-                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0"
+                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0&autoplay=1&mute=1&loop=1&playlist=lquEK0bTC4I"
                   title="Kandu Demo Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
                 
-                {/* Custom Play Button Overlay - Hidden when video is loaded */}
+                {/* Click to expand overlay */}
                 <div 
-                  className="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-20 hover:bg-opacity-30 transition-all duration-200"
+                  className="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-10 hover:bg-opacity-20 transition-all duration-200"
                   onClick={() => setShowVideoModal(true)}
                 >
-                  <motion.div
-                    initial={{ opacity: 0.8 }}
-                    whileHover={{ opacity: 1, scale: 1.05 }}
-                    className="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm"
-                  >
-                    <FiPlay className="w-8 h-8 text-purple-600 ml-1" />
-                  </motion.div>
-                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium">
-                    Click to watch demo
+                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium bg-black bg-opacity-50 px-3 py-1 rounded-full">
+                    Click to expand
                   </div>
                 </div>
               </div>
@@ -935,11 +928,11 @@ const LandingPage: React.FC = () => {
                 <FiX className="w-4 h-4" />
               </button>
               
-              {/* Video Player */}
+              {/* Video Player - Autoplay with Loop */}
               <div className="aspect-video">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0&autoplay=1"
+                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0&autoplay=1&mute=0&loop=1&playlist=lquEK0bTC4I"
                   title="Kandu Demo Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
