@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiStar, FiQuote, FiCheck, FiTrendingUp, FiUsers, FiAward, FiArrowRight } from 'react-icons/fi';
+import { FiStar, FiCheck, FiTrendingUp, FiUsers, FiAward, FiArrowRight } from 'react-icons/fi';
 import SEO from './SEO';
 
 const KanduReviews: React.FC = () => {
@@ -207,7 +207,7 @@ const KanduReviews: React.FC = () => {
                     ))}
                   </div>
                   <div className="relative">
-                    <FiQuote className="w-6 h-6 text-purple-200 absolute -top-2 -left-2" />
+                    <FiStar className="w-6 h-6 text-purple-200 absolute -top-2 -left-2" />
                     <p className="text-gray-700 leading-relaxed pl-4">{review.review}</p>
                   </div>
                 </motion.div>

@@ -40,6 +40,14 @@
       "destination": "/apple-touch-icon.png"
     },
     {
+      "source": "/blog",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/(.*)",
+      "destination": "/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

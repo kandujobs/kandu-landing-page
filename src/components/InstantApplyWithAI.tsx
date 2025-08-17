@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiZap, FiCheck, FiTrendingUp, FiClock, FiUsers, FiAward, FiArrowRight, FiPlay, FiTarget, FiRocket } from 'react-icons/fi';
+import { FiZap, FiCheck, FiTrendingUp, FiClock, FiUsers, FiPlay, FiTarget } from 'react-icons/fi';
 import SEO from './SEO';
 
 const InstantApplyWithAI: React.FC = () => {
@@ -67,7 +67,7 @@ const InstantApplyWithAI: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl transition-all duration-200 flex items-center space-x-2"
                 >
-                  <FiRocket className="w-5 h-5" />
+                  <FiTrendingUp className="w-5 h-5" />
                   <span>Start Instant Apply</span>
                 </motion.button>
                 <motion.button
@@ -298,7 +298,7 @@ const InstantApplyWithAI: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-50 transition-all duration-200 flex items-center space-x-2 mx-auto"
               >
-                <FiRocket className="w-5 h-5" />
+                <FiTrendingUp className="w-5 h-5" />
                 <span>Start Instant Apply Free</span>
               </motion.button>
             </motion.div>

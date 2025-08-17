@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiZap, FiCheck, FiTrendingUp, FiClock, FiUsers, FiAward, FiArrowRight, FiExternalLink } from 'react-icons/fi';
+import { FiTrendingUp, FiClock, FiUsers, FiArrowRight, FiExternalLink } from 'react-icons/fi';
 import SEO from './SEO';
 
 const AIJobAutomationBlog: React.FC = () => {
@@ -151,7 +151,7 @@ const AIJobAutomationBlog: React.FC = () => {
                     description: "AI-optimized applications lead to 3x more interview invitations compared to manual applications."
                   },
                   {
-                    icon: <FiTarget className="w-6 h-6" />,
+                    icon: <FiTrendingUp className="w-6 h-6" />,
                     title: "Precision Job Matching",
                     description: "AI algorithms find jobs that perfectly match your skills, experience, and career goals."
                   },
