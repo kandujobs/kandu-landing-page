@@ -390,15 +390,18 @@ const LandingPage: React.FC = () => {
             {/* Demo Video */}
             <div className="relative bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl overflow-hidden shadow-2xl border border-purple-200/50">
               <div className="aspect-video relative">
-                {/* YouTube Video Embed - Autoplay with Loop */}
-                <iframe
-                  className="w-full h-full rounded-3xl"
-                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0&autoplay=1&mute=1&loop=1&playlist=lquEK0bTC4I&controls=0&disablekb=1&fs=0&iv_load_policy=3"
-                  title="Kandu Demo Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                {/* MP4 Video - Seamless Integration */}
+                <video
+                  className="w-full h-full rounded-3xl object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                >
+                  <source src="/demo-video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
                 
                 {/* Click to expand overlay */}
                 <div 
@@ -716,27 +719,15 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq-section" className="relative py-16 overflow-hidden bg-gradient-to-br from-purple-100 via-blue-100 to-indigo-100 w-full">
-        {/* Smooth transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-100 via-transparent to-transparent pointer-events-none" />
+      <section id="faq-section" className="relative py-16 overflow-hidden w-full" style={{ backgroundColor: '#f0f4ff' }}>
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"></div>
         
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{ 
-              backgroundPosition: ['0% 0%', '100% 100%'],
-            }}
-            transition={{ 
-              duration: 25, 
-              repeat: Infinity, 
-              ease: "linear" 
-            }}
-            className="absolute inset-0 opacity-5"
-            style={{
-              backgroundImage: `radial-gradient(circle at 20% 80%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #3b82f6 0%, transparent 50%)`,
-              backgroundSize: '100% 100%',
-            }}
-          />
+        {/* Subtle Pattern Overlay */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-200 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-indigo-200 rounded-full blur-2xl"></div>
         </div>
 
         {/* Content */}
@@ -928,16 +919,19 @@ const LandingPage: React.FC = () => {
                 <FiX className="w-4 h-4" />
               </button>
               
-              {/* Video Player - Autoplay with Loop */}
+              {/* Video Player - MP4 with Controls */}
               <div className="aspect-video">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0&autoplay=1&mute=0&loop=1&playlist=lquEK0bTC4I&controls=1&fs=1"
-                  title="Kandu Demo Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  playsInline
+                  controls
+                  preload="auto"
+                >
+                  <source src="/demo-video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </motion.div>
           </motion.div>
