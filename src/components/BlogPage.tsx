@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FiCalendar, FiClock, FiArrowRight, FiChevronRight, FiStar, FiUsers, FiTrendingUp } from 'react-icons/fi';
+import { FiCalendar, FiClock, FiArrowRight, FiStar, FiUsers, FiTrendingUp } from 'react-icons/fi';
 import SEO from './SEO';
 
 interface BlogPost {
@@ -123,24 +123,10 @@ const blogPosts: BlogPost[] = [
 ];
 
 const BlogPage: React.FC = () => {
-  const [showAllPosts, setShowAllPosts] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   
   const featuredPost = blogPosts.find(post => post.featured);
   const regularPosts = blogPosts.filter(post => !post.featured);
-  
-  const handleShowMore = () => {
-    setShowAllPosts(true);
-    // Smooth scroll to show more posts
-    setTimeout(() => {
-      if (scrollContainerRef.current) {
-        scrollContainerRef.current.scrollTo({
-          left: scrollContainerRef.current.scrollWidth,
-          behavior: 'smooth'
-        });
-      }
-    }, 100);
-  };
 
   return (
     <>
@@ -344,19 +330,7 @@ const BlogPage: React.FC = () => {
                 ))}
               </div>
               
-              {!showAllPosts && (
-                <div className="text-center mt-8">
-                  <motion.button
-                    onClick={handleShowMore}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-200 flex items-center space-x-2 mx-auto"
-                  >
-                    <span>Show More Articles</span>
-                    <FiChevronRight className="w-5 h-5" />
-                  </motion.button>
-                </div>
-              )}
+
             </div>
           </div>
         </section>
@@ -432,20 +406,23 @@ const BlogPage: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Stay Updated with Job Search Tips
+                Ready to Transform Your Job Search?
               </h2>
               <p className="text-xl text-purple-100 mb-8">
-                Get the latest insights on AI job automation and career advancement delivered to your inbox.
+                Join thousands of job seekers who are already using Kandu to land their dream jobs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-                <button className="bg-white text-purple-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors">
-                  Subscribe
-                </button>
+                <motion.a
+                  href="https://app.kandujobs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200 flex items-center justify-center space-x-2"
+                >
+                  <span>Create Your Account</span>
+                  <FiArrowRight className="w-5 h-5" />
+                </motion.a>
               </div>
             </motion.div>
           </div>
