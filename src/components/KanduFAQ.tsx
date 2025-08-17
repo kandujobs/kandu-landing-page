@@ -62,11 +62,11 @@ const KanduFAQ: React.FC = () => {
                 From how our AI works to pricing and features, we've got you covered.
               </p>
               <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
-                <span>Published: January 20, 2024</span>
-                <span>•</span>
                 <span>10 min read</span>
                 <span>•</span>
-                <span>Updated: January 20, 2024</span>
+                <span>Kandu Guide</span>
+                <span>•</span>
+                <span>Getting Started</span>
               </div>
             </motion.div>
           </div>
@@ -301,6 +301,23 @@ const KanduFAQ: React.FC = () => {
                   </div>
                 </div>
               </div>
+              
+              {/* Subtle CTA */}
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-2xl border border-purple-200 mb-8">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Ready to Get Started?</h3>
+                  <p className="text-gray-600 mb-4">Join thousands of job seekers who are already using Kandu to land their dream jobs.</p>
+                  <a 
+                    href="https://app.kandujobs.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-200"
+                  >
+                    <span>Start Free Today</span>
+                    <FiArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </motion.div>
 
             {/* Job Matching */}
@@ -397,7 +414,7 @@ const KanduFAQ: React.FC = () => {
                   </p>
                   <div className="flex items-center text-green-600 font-semibold">
                     <FiShield className="w-5 h-5 mr-2" />
-                    <span>Bank-level encryption • GDPR compliant • SOC 2 certified</span>
+                    <span>Hign-level encryption •GDPR compliant • RLS enabled</span>
                   </div>
                 </div>
 
@@ -429,7 +446,6 @@ const KanduFAQ: React.FC = () => {
                   </p>
                   <ul className="text-gray-700 space-y-2">
                     <li>• Email: support@kandujobs.com</li>
-                    <li>• In-app chat support</li>
                     <li>• Help center with detailed guides</li>
                     <li>• Community forum for user discussions</li>
                   </ul>
@@ -463,10 +479,12 @@ const KanduFAQ: React.FC = () => {
                 Join thousands of job seekers who are already using Kandu to land their dream jobs.
               </p>
               <a 
-                href="/"
+                href="https://app.kandujobs.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 bg-white text-purple-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
               >
-                <span>Get Started for Free</span>
+                <span>Try Kandu Free</span>
                 <FiArrowRight className="w-4 h-4" />
               </a>
             </motion.div>
@@ -504,3 +522,4 @@ const KanduFAQ: React.FC = () => {
 };
 
 export default KanduFAQ;
+

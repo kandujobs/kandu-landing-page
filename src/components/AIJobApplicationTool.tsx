@@ -62,22 +62,26 @@ const AIJobApplicationTool: React.FC = () => {
                 Save 10+ hours per week while our AI handles the tedious application process.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <motion.button
+                <motion.a
+                  href="https://app.kandujobs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl transition-all duration-200 flex items-center space-x-2"
                 >
-                  <span>Start Free Trial</span>
+                  <span>Try Kandu Free</span>
                   <FiArrowRight className="w-5 h-5" />
-                </motion.button>
-                <motion.button
+                </motion.a>
+                <motion.a
+                  href="/blog"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-semibold text-lg border-2 border-purple-200 hover:border-purple-300 transition-all duration-200 flex items-center space-x-2"
                 >
                   <FiPlay className="w-5 h-5" />
-                  <span>Watch Demo</span>
-                </motion.button>
+                  <span>Learn More</span>
+                </motion.a>
               </div>
             </motion.div>
           </div>

@@ -62,11 +62,11 @@ const LinkedInJobAutomation: React.FC = () => {
                 to find more opportunities faster and increase your chances of landing interviews.
               </p>
               <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
-                <span>Published: December 28, 2023</span>
-                <span>•</span>
                 <span>7 min read</span>
                 <span>•</span>
-                <span>Updated: December 28, 2023</span>
+                <span>LinkedIn Automation</span>
+                <span>•</span>
+                <span>Job Search Tips</span>
               </div>
             </motion.div>
           </div>
@@ -326,10 +326,12 @@ const LinkedInJobAutomation: React.FC = () => {
                 Start using LinkedIn automation today and discover how much time you can save while finding better opportunities.
               </p>
               <a 
-                href="/"
+                href="https://app.kandujobs.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 bg-white text-purple-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
               >
-                <span>Get Started with Kandu</span>
+                <span>Try Kandu Free</span>
                 <FiArrowRight className="w-4 h-4" />
               </a>
             </motion.div>
@@ -367,3 +369,4 @@ const LinkedInJobAutomation: React.FC = () => {
 };
 
 export default LinkedInJobAutomation;
+

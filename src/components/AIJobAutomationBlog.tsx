@@ -63,11 +63,11 @@ const AIJobAutomationBlog: React.FC = () => {
                 AI job automation for career success.
               </p>
               <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
-                <span>Published: January 15, 2024</span>
-                <span>•</span>
                 <span>8 min read</span>
                 <span>•</span>
-                <span>Updated: January 15, 2024</span>
+                <span>AI Job Search</span>
+                <span>•</span>
+                <span>Career Automation</span>
               </div>
             </motion.div>
           </div>
@@ -271,6 +271,23 @@ const AIJobAutomationBlog: React.FC = () => {
                   </div>
                 ))}
               </div>
+              
+              {/* Subtle CTA */}
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-2xl border border-purple-200 mb-8">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Ready to Experience AI Job Automation?</h3>
+                  <p className="text-gray-600 mb-4">Join thousands of job seekers who are already saving hours with intelligent automation.</p>
+                  <a 
+                    href="https://app.kandujobs.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-200"
+                  >
+                    <span>Start Free Today</span>
+                    <FiArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </motion.div>
 
             {/* Implementation Strategy */}
@@ -362,22 +379,26 @@ const AIJobAutomationBlog: React.FC = () => {
                 and focus on what matters most: your career growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <motion.button
+                <motion.a
+                  href="https://app.kandujobs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-50 transition-all duration-200 flex items-center space-x-2"
                 >
-                  <span>Start Free Trial</span>
+                  <span>Try Kandu Free</span>
                   <FiArrowRight className="w-5 h-5" />
-                </motion.button>
-                <motion.button
+                </motion.a>
+                <motion.a
+                  href="/blog"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-transparent text-white px-8 py-4 rounded-2xl font-semibold text-lg border-2 border-white hover:bg-white hover:text-purple-600 transition-all duration-200 flex items-center space-x-2"
                 >
-                  <span>Learn More</span>
+                  <span>Read More Articles</span>
                   <FiExternalLink className="w-5 h-5" />
-                </motion.button>
+                </motion.a>
               </div>
             </motion.div>
           </div>
@@ -388,3 +409,4 @@ const AIJobAutomationBlog: React.FC = () => {
 };
 
 export default AIJobAutomationBlog;
+
