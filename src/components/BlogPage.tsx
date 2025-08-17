@@ -87,7 +87,6 @@ const blogPosts: BlogPost[] = [
 ];
 
 const BlogPage: React.FC = () => {
-  console.log('BlogPage component is rendering!');
   const featuredPost = blogPosts.find(post => post.featured);
   const regularPosts = blogPosts.filter(post => !post.featured);
 
