@@ -412,17 +412,17 @@ const BlogPage: React.FC = () => {
                 Join thousands of job seekers who are already using Kandu to land their dream jobs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <motion.a
-                  href="https://app.kandujobs.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200 flex items-center justify-center space-x-2"
-                >
-                  <span>Create Your Account</span>
-                  <FiArrowRight className="w-5 h-5" />
-                </motion.a>
+                              <motion.a
+                href="https://app.kandujobs.com/signup"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200 flex items-center justify-center space-x-2"
+              >
+                <span>Start Free Trial</span>
+                <FiArrowRight className="w-5 h-5" />
+              </motion.a>
               </div>
             </motion.div>
           </div>

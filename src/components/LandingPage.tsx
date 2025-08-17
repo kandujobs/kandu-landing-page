@@ -55,6 +55,7 @@ const LandingPage: React.FC = () => {
   const [showEndState, setShowEndState] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState<'left' | 'right'>('right');
   const [showFloatingHeader, setShowFloatingHeader] = useState(false);
+  const [showVideoModal, setShowVideoModal] = useState(false);
 
 
   const handleGetStarted = () => {
@@ -386,43 +387,34 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative max-w-3xl sm:max-w-4xl mx-auto mb-12 px-4"
           >
-            {/* Video Placeholder */}
+            {/* Demo Video */}
             <div className="relative bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl overflow-hidden shadow-2xl border border-purple-200/50">
-              <div className="aspect-video bg-gradient-to-br from-purple-200 to-blue-200 flex items-center justify-center relative">
-                {/* Animated Background Pattern */}
-                <div className="absolute inset-0 opacity-20">
-                  <motion.div
-                    animate={{
-                      rotate: 360,
-                    }}
-                    transition={{
-                      duration: 20,
-                      repeat: Infinity,
-                      ease: "linear"
-                    }}
-                    className="w-full h-full"
-                    style={{
-                      backgroundImage: `conic-gradient(from 0deg, #8b5cf6, #3b82f6, #8b5cf6)`,
-                    }}
-                  />
-                </div>
+              <div className="aspect-video relative">
+                {/* YouTube Video Embed */}
+                <iframe
+                  className="w-full h-full rounded-3xl"
+                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0"
+                  title="Kandu Demo Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
                 
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
+                {/* Custom Play Button Overlay - Hidden when video is loaded */}
+                <div 
+                  className="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-20 hover:bg-opacity-30 transition-all duration-200"
+                  onClick={() => setShowVideoModal(true)}
+                >
                   <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer group backdrop-blur-sm"
+                    initial={{ opacity: 0.8 }}
+                    whileHover={{ opacity: 1, scale: 1.05 }}
+                    className="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm"
                   >
-                    <FiPlay className="w-8 h-8 text-purple-600 ml-1 group-hover:scale-110 transition-transform" />
+                    <FiPlay className="w-8 h-8 text-purple-600 ml-1" />
                   </motion.div>
-                </div>
-                
-                {/* Video Placeholder Content */}
-                <div className="text-center text-gray-500 relative z-10">
-                  <div className="text-6xl mb-4">📱</div>
-                  <p className="text-lg font-medium">Demo Video</p>
-                  <p className="text-sm">Swipe interface in action</p>
+                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium">
+                    Click to watch demo
+                  </div>
                 </div>
               </div>
             </div>
@@ -917,6 +909,47 @@ const LandingPage: React.FC = () => {
           </p>
         </div>
       </footer>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {showVideoModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+            onClick={() => setShowVideoModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setShowVideoModal(false)}
+                className="absolute top-4 right-4 z-10 w-8 h-8 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-75 transition-all"
+              >
+                <FiX className="w-4 h-4" />
+              </button>
+              
+              {/* Video Player */}
+              <div className="aspect-video">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/lquEK0bTC4I?rel=0&modestbranding=1&showinfo=0&autoplay=1"
+                  title="Kandu Demo Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
