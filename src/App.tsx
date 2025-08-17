@@ -5,7 +5,6 @@ import AIJobAutomationBlog from './components/AIJobAutomationBlog';
 import InstantApplyWithAI from './components/InstantApplyWithAI';
 import AIJobApplicationTool from './components/AIJobApplicationTool';
 import LinkedInJobAutomation from './components/LinkedInJobAutomation';
-import SEO from './components/SEO';
 
 function App() {
   return (
