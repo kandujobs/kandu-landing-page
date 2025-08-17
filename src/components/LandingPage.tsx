@@ -256,7 +256,7 @@ const LandingPage: React.FC = () => {
               </button>
             </div>
 
-            {/* Review Section */}
+            {/* Trust Indicators */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -268,14 +268,14 @@ const LandingPage: React.FC = () => {
                 <div className="flex space-x-1">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-400 text-xl">
-                      {i < 4 ? '★' : '☆'}
+                      ★
                     </span>
                   ))}
                 </div>
-                <span className="text-gray-700 font-semibold">4.9</span>
+                <span className="text-gray-700 font-semibold">5.0</span>
               </div>
               <p className="text-gray-600 text-sm">
-                Rated by over 2,000+ job seekers
+                Trusted by job seekers worldwide
               </p>
             </motion.div>
           </motion.div>
