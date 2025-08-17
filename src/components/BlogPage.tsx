@@ -107,6 +107,18 @@ const blogPosts: BlogPost[] = [
     url: '/blog/resume-optimization-ai',
     category: 'Resume Optimization',
     featured: false
+  },
+  {
+    id: 'job-search-automation',
+    title: 'Job Search Automation: Save 20+ Hours Per Week with Smart Job Hunting Tools',
+    description: 'Discover how job search automation can transform your career hunt. Learn to save 20+ hours per week while improving your job search results with AI-powered tools and strategies.',
+    excerpt: 'Stop manually searching for jobs. Learn how automation can save you 20+ hours per week while improving your job search results.',
+    date: '2024-01-20',
+    readTime: '8 min read',
+    image: '/blog/job-search-automation.jpg',
+    url: '/blog/job-search-automation',
+    category: 'Productivity',
+    featured: false
   }
 ];
 

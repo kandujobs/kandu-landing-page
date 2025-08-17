@@ -7,6 +7,7 @@ import AIJobApplicationTool from './components/AIJobApplicationTool';
 import LinkedInJobAutomation from './components/LinkedInJobAutomation';
 import KanduFAQ from './components/KanduFAQ';
 import ResumeOptimizationAI from './components/ResumeOptimizationAI';
+import JobSearchAutomation from './components/JobSearchAutomation';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/blog/linkedin-job-automation" element={<LinkedInJobAutomation />} />
           <Route path="/blog/kandu-faq" element={<KanduFAQ />} />
           <Route path="/blog/resume-optimization-ai" element={<ResumeOptimizationAI />} />
+          <Route path="/blog/job-search-automation" element={<JobSearchAutomation />} />
         </Routes>
       </div>
     </Router>
