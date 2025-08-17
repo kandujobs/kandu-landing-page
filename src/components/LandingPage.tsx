@@ -268,11 +268,11 @@ const LandingPage: React.FC = () => {
                 <div className="flex space-x-1">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-400 text-xl">
-                      ★
+                      {i < 4 ? '★' : '☆'}
                     </span>
                   ))}
                 </div>
-                <span className="text-gray-700 font-semibold">5.0</span>
+                <span className="text-gray-700 font-semibold">4.8</span>
               </div>
               <p className="text-gray-600 text-sm">
                 Trusted by job seekers worldwide
