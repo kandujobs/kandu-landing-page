@@ -639,30 +639,16 @@ const LandingPage: React.FC = () => {
 
         {/* Content */}
         <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          {/* Animated Beta Badge */}
+          {/* Beta Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <motion.div
-              animate={{ 
-                rotate: [0, 10, -10, 0],
-                scale: [1, 1.05, 1]
-              }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity, 
-                repeatDelay: 3,
-                ease: "easeInOut"
-              }}
-              className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full shadow-lg"
-            >
-              <span className="text-xl mr-2">✨</span>
-              <span className="font-bold text-sm">Now in Beta</span>
-              <span className="text-xl ml-2">✨</span>
-            </motion.div>
+            <div className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-full shadow-md">
+              <span className="font-semibold text-sm">Now in Beta</span>
+            </div>
           </motion.div>
 
           {/* Animated Headline */}
@@ -702,128 +688,59 @@ const LandingPage: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8 mt-16">
             {/* AI-Generated Resume */}
             <motion.div
-              initial={{ opacity: 0, y: 50, rotateY: -15 }}
-              animate={{ opacity: 1, y: 0, rotateY: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
               whileHover={{ 
-                y: -10, 
-                rotateY: 5,
-                scale: 1.02,
+                y: -5, 
                 transition: { duration: 0.3 }
               }}
-              className="group relative bg-gradient-to-br from-white to-purple-50 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-purple-200 overflow-hidden"
+              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
             >
-              {/* Animated Background Elements */}
-              <motion.div
-                animate={{ 
-                  rotate: [0, 360],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  duration: 8, 
-                  repeat: Infinity, 
-                  ease: "linear"
-                }}
-                className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-20"
-              />
-              
               <div className="relative z-10">
-                <motion.div 
-                  className="flex items-center mb-6"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <motion.div 
-                    className="w-20 h-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white text-4xl mr-6 shadow-lg"
-                    animate={{ 
-                      rotate: [0, 5, -5, 0],
-                      scale: [1, 1.05, 1]
-                    }}
-                    transition={{ 
-                      duration: 3, 
-                      repeat: Infinity, 
-                      ease: "easeInOut"
-                    }}
-                  >
-                    ✨
-                  </motion.div>
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mr-6 shadow-md">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-1">AI-Generated Resume</h3>
                     <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
                   </div>
-                </motion.div>
-                <motion.p 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 1.2 }}
-                  className="text-gray-700 leading-relaxed text-lg"
-                >
+                </div>
+                <p className="text-gray-700 leading-relaxed text-lg">
                   Simplify the process with resumes tailored to <strong className="text-purple-600">showcase your skills</strong> and <strong className="text-blue-600">match job requirements</strong>, all in just a few clicks.
-                </motion.p>
+                </p>
               </div>
             </motion.div>
 
             {/* AI-Generated Cover Letter */}
             <motion.div
-              initial={{ opacity: 0, y: 50, rotateY: 15 }}
-              animate={{ opacity: 1, y: 0, rotateY: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
               whileHover={{ 
-                y: -10, 
-                rotateY: -5,
-                scale: 1.02,
+                y: -5, 
                 transition: { duration: 0.3 }
               }}
-              className="group relative bg-gradient-to-br from-white to-blue-50 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-blue-200 overflow-hidden"
+              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
             >
-              {/* Animated Background Elements */}
-              <motion.div
-                animate={{ 
-                  rotate: [360, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  duration: 8, 
-                  repeat: Infinity, 
-                  ease: "linear"
-                }}
-                className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full opacity-20"
-              />
-              
               <div className="relative z-10">
-                <motion.div 
-                  className="flex items-center mb-6"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <motion.div 
-                    className="w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-4xl mr-6 shadow-lg"
-                    animate={{ 
-                      rotate: [0, -5, 5, 0],
-                      scale: [1, 1.05, 1]
-                    }}
-                    transition={{ 
-                      duration: 3, 
-                      repeat: Infinity, 
-                      ease: "easeInOut",
-                      delay: 0.5
-                    }}
-                  >
-                    ✨
-                  </motion.div>
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mr-6 shadow-md">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-1">AI-Generated Cover Letter</h3>
                     <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
                   </div>
-                </motion.div>
-                <motion.p 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 1.4 }}
-                  className="text-gray-700 leading-relaxed text-lg"
-                >
+                </div>
+                <p className="text-gray-700 leading-relaxed text-lg">
                   Easily create personalized <strong className="text-blue-600">cover letters</strong> that <strong className="text-indigo-600">highlight your value</strong> and make every application stand out.
-                </motion.p>
+                </p>
               </div>
             </motion.div>
           </div>
