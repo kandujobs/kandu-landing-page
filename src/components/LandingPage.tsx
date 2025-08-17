@@ -881,18 +881,26 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="relative px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-br from-gray-800 to-gray-900 text-white w-full">
-        <div className="max-w-7xl mx-auto text-center">
+      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
-            {/* Custom K Logo */}
-            <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center shadow-sm">
-              <span className="text-white font-bold text-lg tracking-tight">K</span>
+            <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">K</span>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Kandu
             </span>
           </div>
-          <p className="text-gray-400">
+          <p className="text-gray-400 mb-4">
+            Your AI-powered job search assistant
+          </p>
+          <div className="flex items-center justify-center space-x-6 text-sm text-gray-400">
+            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <a href="/blog" className="hover:text-white transition-colors">Blog</a>
+            <a href="/about" className="hover:text-white transition-colors">About</a>
+            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
+          </div>
+          <p className="text-gray-500 mt-6">
             © 2025 Kandu. All rights reserved.
           </p>
         </div>
