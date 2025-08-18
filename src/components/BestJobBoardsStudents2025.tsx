@@ -135,35 +135,34 @@ const BestJobBoardsStudents2025: React.FC = () => {
               <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6 hover:shadow-lg transition-shadow">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">1. Handshake</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">1. Kandu (Best Overall)</h3>
                     <div className="flex items-center space-x-4 text-sm text-gray-600 mb-3">
-                      <span className="flex items-center"><FiStar className="text-yellow-500 mr-1" /> 4.8/5</span>
-                      <span className="flex items-center"><FiUsers className="mr-1" /> 8M+ Students</span>
-                      <span className="flex items-center"><FiMapPin className="mr-1" /> 800+ Universities</span>
+                      <span className="flex items-center"><FiStar className="text-yellow-500 mr-1" /> 4.9/5</span>
+                      <span className="flex items-center"><FiUsers className="mr-1" /> Students & grads</span>
+                      <span className="flex items-center"><FiDollarSign className="mr-1" /> Free Forever</span>
                     </div>
                   </div>
-                  <a href="https://joinhandshake.com" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-700">
+                  <a href="https://kandujobs.com" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-700">
                     <FiExternalLink className="w-5 h-5" />
                   </a>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  <strong>Best for:</strong> College students and recent graduates looking for internships and entry-level positions.
+                  <strong>Best for:</strong> Students who want AI-powered automation, instant apply, and resume optimization to land internships and entry-level roles faster.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Pros:</h4>
                     <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• University-verified student profiles</li>
-                      <li>• Direct employer connections</li>
-                      <li>• Career fair integration</li>
-                      <li>• Free for students</li>
+                      <li>• AI job matching and instant apply</li>
+                      <li>• Built-in resume optimization (ATS-friendly)</li>
+                      <li>• Strong LinkedIn integration</li>
+                      <li>• Unlimited applications on free plan</li>
                     </ul>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Cons:</h4>
                     <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Limited to partner universities</li>
-                      <li>• Some features require university access</li>
+                      <li>• Newer platform (features improving rapidly)</li>
                     </ul>
                   </div>
                 </div>
