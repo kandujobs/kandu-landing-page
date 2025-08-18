@@ -556,11 +556,33 @@ const UltimateResumeGuideStudents: React.FC = () => {
               </div>
             </motion.div>
 
+            {/* CTA Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+              className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center text-white mb-16"
+            >
+              <h2 className="text-3xl font-bold mb-4">Ready to Create Your Perfect Resume?</h2>
+              <p className="text-xl mb-6 opacity-90">
+                Use Kandu's AI-powered resume optimization to ensure your resume passes ATS systems and gets you interviews.
+              </p>
+              <a
+                href="https://app.kandujobs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-white text-purple-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors"
+              >
+                Optimize Your Resume with AI
+                <FiArrowRight className="ml-2" />
+              </a>
+            </motion.div>
+
             {/* Your Next Read Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.3 }}
+              transition={{ duration: 0.8, delay: 1.5 }}
               className="mb-16"
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Your Next Read</h2>
@@ -587,28 +609,6 @@ const UltimateResumeGuideStudents: React.FC = () => {
                   <span className="text-purple-600 font-semibold">Read More →</span>
                 </a>
               </div>
-            </motion.div>
-
-            {/* CTA Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center text-white"
-            >
-              <h2 className="text-3xl font-bold mb-4">Ready to Create Your Perfect Resume?</h2>
-              <p className="text-xl mb-6 opacity-90">
-                Use Kandu's AI-powered resume optimization to ensure your resume passes ATS systems and gets you interviews.
-              </p>
-              <a
-                href="https://app.kandujobs.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-white text-purple-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Optimize Your Resume with AI
-                <FiArrowRight className="ml-2" />
-              </a>
             </motion.div>
           </div>
         </main>
