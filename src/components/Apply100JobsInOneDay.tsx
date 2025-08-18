@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiUsers, FiArrowRight, FiExternalLink, FiStar, FiMapPin, FiDollarSign, FiClock, FiTrendingUp, FiZap, FiTarget } from 'react-icons/fi';
+import { FiArrowRight, FiTrendingUp, FiZap, FiTarget } from 'react-icons/fi';
 import SEO from './SEO';
 
 const Apply100JobsInOneDay: React.FC = () => {

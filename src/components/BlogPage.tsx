@@ -18,6 +18,30 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: 'ultimate-resume-guide-students',
+    title: 'The Ultimate Resume Guide for Students: Complete Template & Tips 2025',
+    description: 'Master resume writing for students with our comprehensive guide. Get free templates, ATS optimization tips, and proven strategies to land internships and entry-level jobs.',
+    excerpt: 'Create a winning student resume with our comprehensive guide. Get free templates, ATS optimization tips, and proven strategies to land internships and entry-level jobs.',
+    date: '2025-01-22',
+    readTime: '18 min read',
+    image: '/blog/ultimate-resume-guide-students.jpg',
+    url: '/blog/ultimate-resume-guide-students',
+    category: 'Student Career Guide',
+    featured: true
+  },
+  {
+    id: 'kandu-vs-lazyapply',
+    title: 'Kandu vs LazyApply: Complete Comparison 2025 | Which AI Job Automation Tool is Better?',
+    description: 'Compare Kandu vs LazyApply for AI job automation. See pricing, features, success rates, and user reviews to choose the best tool for your job search in 2025.',
+    excerpt: 'Comprehensive comparison of the top AI job automation tools. See pricing, features, success rates, and real user reviews to make an informed decision.',
+    date: '2025-01-23',
+    readTime: '12 min read',
+    image: '/blog/kandu-vs-lazyapply.jpg',
+    url: '/blog/kandu-vs-lazyapply',
+    category: 'Tool Comparison',
+    featured: true
+  },
+  {
     id: 'apply-100-jobs-in-one-day',
     title: 'How to Apply to 100 Jobs in One Day: Complete Guide 2025',
     description: 'Learn the proven strategies to apply to 100+ jobs in a single day. Discover AI automation tools, batch application techniques, and time-saving methods for maximum job search efficiency.',
