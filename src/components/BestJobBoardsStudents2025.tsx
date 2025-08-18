@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiTrendingUp, FiClock, FiUsers, FiArrowRight, FiExternalLink, FiStar, FiMapPin, FiDollarSign } from 'react-icons/fi';
+import { FiUsers, FiArrowRight, FiExternalLink, FiStar, FiMapPin, FiDollarSign } from 'react-icons/fi';
 import SEO from './SEO';
 
 const BestJobBoardsStudents2025: React.FC = () => {
