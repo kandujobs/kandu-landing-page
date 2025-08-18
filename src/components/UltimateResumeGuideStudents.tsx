@@ -464,7 +464,7 @@ const UltimateResumeGuideStudents: React.FC = () => {
                       <li>• Professional color scheme</li>
                     </ul>
                   </div>
-                  <a href="#" className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold">
+                  <a href="https://app.kandujobs.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold">
                     Download Template
                     <FiArrowRight className="ml-2" />
                   </a>
@@ -484,7 +484,7 @@ const UltimateResumeGuideStudents: React.FC = () => {
                       <li>• Portfolio integration</li>
                     </ul>
                   </div>
-                  <a href="#" className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold">
+                  <a href="https://app.kandujobs.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold">
                     Download Template
                     <FiArrowRight className="ml-2" />
                   </a>
