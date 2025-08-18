@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import BlogPage from './components/BlogPage';
+import BestJobBoardsStudents2025 from './components/BestJobBoardsStudents2025';
 import AIJobAutomationBlog from './components/AIJobAutomationBlog';
 import InstantApplyWithAI from './components/InstantApplyWithAI';
 import AIJobApplicationTool from './components/AIJobApplicationTool';
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/best-job-boards-students-2025" element={<BestJobBoardsStudents2025 />} />
           <Route path="/blog/ai-job-automation" element={<AIJobAutomationBlog />} />
           <Route path="/blog/instant-apply-ai" element={<InstantApplyWithAI />} />
           <Route path="/blog/ai-job-application-tool" element={<AIJobApplicationTool />} />

@@ -399,7 +399,7 @@ const LandingPage: React.FC = () => {
                   playsInline
                   preload="auto"
                 >
-                  <source src="/Kandu.mp4" type="video/mp4" />
+                  <source src="/Kandu Video V2.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -668,10 +668,7 @@ const LandingPage: React.FC = () => {
                 Effortless
               </span>
               <br />
-              <span className="text-gray-900">cover letters and resumes</span>
-              <br />
-              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                with AI
+              <span className="text-gray-900">cover letters and resumes
               </span>
             </motion.h2>
             <motion.p 
