@@ -399,7 +399,7 @@ const LandingPage: React.FC = () => {
                   playsInline
                   preload="auto"
                 >
-                  <source src="/Kandu Video V2.mp4" type="video/mp4" />
+                  <source src="/KanduVideoV3.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>

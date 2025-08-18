@@ -18,12 +18,24 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: 'apply-100-jobs-in-one-day',
+    title: 'How to Apply to 100 Jobs in One Day: Complete Guide 2025',
+    description: 'Learn the proven strategies to apply to 100+ jobs in a single day. Discover AI automation tools, batch application techniques, and time-saving methods for maximum job search efficiency.',
+    excerpt: 'Master the art of high-volume job applications with proven strategies, AI automation tools, and time-saving techniques. Transform your job search from hours to minutes.',
+    date: '2025-08-18',
+    readTime: '11 min read',
+    image: '/blog/apply-100-jobs-in-one-day.jpg',
+    url: '/blog/apply-100-jobs-in-one-day',
+    category: 'Job Application Strategy',
+    featured: true
+  },
+  {
     id: 'best-job-boards-students-2025',
     title: 'Best Job Boards for Students in 2025: Complete Guide',
     description: 'Discover the top job boards for students in 2025. From internships to entry-level positions, find the best platforms for student job search and career opportunities.',
     excerpt: 'Navigate the competitive job market with our comprehensive guide to the top job boards for students. From internships to entry-level positions, discover where to find your next opportunity.',
     date: '2025-08-18',
-    readTime: '12 min read',
+    readTime: '8 min read',
     image: '/blog/best-job-boards-students-2025.jpg',
     url: '/blog/best-job-boards-students-2025',
     category: 'Student Job Search',

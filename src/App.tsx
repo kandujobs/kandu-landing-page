@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import BlogPage from './components/BlogPage';
+import Apply100JobsInOneDay from './components/Apply100JobsInOneDay';
 import BestJobBoardsStudents2025 from './components/BestJobBoardsStudents2025';
 import AIJobAutomationBlog from './components/AIJobAutomationBlog';
 import InstantApplyWithAI from './components/InstantApplyWithAI';
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/apply-100-jobs-in-one-day" element={<Apply100JobsInOneDay />} />
           <Route path="/blog/best-job-boards-students-2025" element={<BestJobBoardsStudents2025 />} />
           <Route path="/blog/ai-job-automation" element={<AIJobAutomationBlog />} />
           <Route path="/blog/instant-apply-ai" element={<InstantApplyWithAI />} />
