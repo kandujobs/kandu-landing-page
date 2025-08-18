@@ -556,6 +556,39 @@ const UltimateResumeGuideStudents: React.FC = () => {
               </div>
             </motion.div>
 
+            {/* Your Next Read Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.3 }}
+              className="mb-16"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Your Next Read</h2>
+              <p className="text-lg text-gray-600 mb-8 text-center max-w-2xl mx-auto">
+                Continue your job search journey with these related articles and guides.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="/blog/apply-100-jobs-in-one-day" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">How to Apply to 100 Jobs in One Day</h3>
+                  <p className="text-gray-600 mb-4">Master high-volume job applications with proven strategies and AI automation.</p>
+                  <span className="text-purple-600 font-semibold">Read More →</span>
+                </a>
+                
+                <a href="/blog/resume-optimization-ai" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">AI Resume Optimization</h3>
+                  <p className="text-gray-600 mb-4">Get your resume past ATS systems with AI-powered optimization techniques.</p>
+                  <span className="text-purple-600 font-semibold">Read More →</span>
+                </a>
+                
+                <a href="/blog/best-job-boards-students-2025" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Best Job Boards for Students</h3>
+                  <p className="text-gray-600 mb-4">Discover the top platforms for student job search and career opportunities.</p>
+                  <span className="text-purple-600 font-semibold">Read More →</span>
+                </a>
+              </div>
+            </motion.div>
+
             {/* CTA Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

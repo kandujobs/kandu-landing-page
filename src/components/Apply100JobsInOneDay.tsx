@@ -568,6 +568,39 @@ const Apply100JobsInOneDay: React.FC = () => {
               </div>
             </motion.div>
 
+            {/* Your Next Read Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.7 }}
+              className="mb-16"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Your Next Read</h2>
+              <p className="text-lg text-gray-600 mb-8 text-center max-w-2xl mx-auto">
+                Continue your job search journey with these related articles and guides.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="/blog/ultimate-resume-guide-students" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Ultimate Resume Guide for Students</h3>
+                  <p className="text-gray-600 mb-4">Create a winning student resume with free templates and ATS optimization tips.</p>
+                  <span className="text-purple-600 font-semibold">Read More →</span>
+                </a>
+                
+                <a href="/blog/ai-job-automation" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">AI Job Automation Guide</h3>
+                  <p className="text-gray-600 mb-4">Learn how AI is revolutionizing job search and application processes.</p>
+                  <span className="text-purple-600 font-semibold">Read More →</span>
+                </a>
+                
+                <a href="/blog/linkedin-job-automation" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">LinkedIn Job Automation</h3>
+                  <p className="text-gray-600 mb-4">Automate your LinkedIn job search to find more opportunities faster.</p>
+                  <span className="text-purple-600 font-semibold">Read More →</span>
+                </a>
+              </div>
+            </motion.div>
+
             {/* CTA Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
