@@ -18,6 +18,18 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: 'what-is-ats',
+    title: 'What is ATS? Complete Guide to Applicant Tracking Systems 2025',
+    description: 'Learn what ATS (Applicant Tracking System) is, how it works, and how to optimize your resume to pass ATS screening. Get past the robots and reach human recruiters.',
+    excerpt: 'Complete guide to Applicant Tracking Systems. Learn how ATS works, why 75% of resumes get rejected, and how to optimize your resume to pass the robot screening.',
+    date: '2025-01-24',
+    readTime: '14 min read',
+    image: '/blog/what-is-ats.jpg',
+    url: '/blog/what-is-ats',
+    category: 'ATS Optimization',
+    featured: true
+  },
+  {
     id: 'ultimate-resume-guide-students',
     title: 'The Ultimate Resume Guide for Students: Complete Template & Tips 2025',
     description: 'Master resume writing for students with our comprehensive guide. Get free templates, ATS optimization tips, and proven strategies to land internships and entry-level jobs.',

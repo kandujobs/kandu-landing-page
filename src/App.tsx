@@ -5,6 +5,7 @@ import Apply100JobsInOneDay from './components/Apply100JobsInOneDay';
 import BestJobBoardsStudents2025 from './components/BestJobBoardsStudents2025';
 import UltimateResumeGuideStudents from './components/UltimateResumeGuideStudents';
 import KanduVsLazyApply from './components/KanduVsLazyApply';
+import WhatIsATS from './components/WhatIsATS';
 import AIJobAutomationBlog from './components/AIJobAutomationBlog';
 import InstantApplyWithAI from './components/InstantApplyWithAI';
 import AIJobApplicationTool from './components/AIJobApplicationTool';
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/what-is-ats" element={<WhatIsATS />} />
           <Route path="/blog/ultimate-resume-guide-students" element={<UltimateResumeGuideStudents />} />
           <Route path="/blog/kandu-vs-lazyapply" element={<KanduVsLazyApply />} />
           <Route path="/blog/apply-100-jobs-in-one-day" element={<Apply100JobsInOneDay />} />
