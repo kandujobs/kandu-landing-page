@@ -240,7 +240,7 @@ const Apply100JobsInOneDay: React.FC = () => {
                   <div className="bg-white rounded-lg p-4">
                     <h4 className="font-semibold text-gray-900 mb-2">Specialized Sites</h4>
                     <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Handshake (Students)</li>
+                      <li>• Kandu (AI Automation)</li>
                       <li>• Glassdoor</li>
                       <li>• Company career pages</li>
                     </ul>
@@ -350,7 +350,7 @@ const Apply100JobsInOneDay: React.FC = () => {
                         <li>• LinkedIn Easy Apply</li>
                         <li>• Indeed Quick Apply</li>
                         <li>• ZipRecruiter One-Click</li>
-                        <li>• Handshake</li>
+                        <li>• Kandu AI Automation</li>
                       </ul>
                     </div>
                     <div>
