@@ -380,28 +380,22 @@ const LandingPage: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Video Section */}
+          {/* Image Section */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative max-w-3xl sm:max-w-4xl mx-auto mb-12 px-4"
           >
-            {/* Demo Video */}
+            {/* Demo Image */}
             <div className="relative bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl overflow-hidden shadow-2xl border border-purple-200/50">
-              <div className="aspect-video relative">
-                {/* MP4 Video - Seamless Integration */}
-                <video
-                  className="w-full h-full rounded-3xl object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                >
-                  <source src="/KanduVideoV3.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+              <div className="relative">
+                {/* KanduSwipe Image */}
+                <img
+                  src="/KanduSwipe.png"
+                  alt="Kandu Swipe Interface - Don't search, swipe to find your perfect job"
+                  className="w-full h-auto rounded-3xl object-cover"
+                />
               </div>
             </div>
 
