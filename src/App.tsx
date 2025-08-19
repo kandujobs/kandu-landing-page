@@ -15,6 +15,8 @@ import ResumeOptimizationAI from './components/ResumeOptimizationAI';
 import JobSearchAutomation from './components/JobSearchAutomation';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
           <Route path="/blog/job-search-automation" element={<JobSearchAutomation />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
       </div>
     </Router>
