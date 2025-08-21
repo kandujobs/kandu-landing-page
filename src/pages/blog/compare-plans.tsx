@@ -6,7 +6,7 @@ const ComparePlans: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Kandu Plans Comparison: Starter vs Pro vs Premium - Which Plan is Right for You?</title>
+        <title>Starter vs Pro vs Premium - Which Plan is Right for You?</title>
         <meta name="description" content="Compare Kandu's three subscription plans to find the perfect fit for your job search. Detailed breakdown of features, pricing, and recommendations." />
         <meta name="keywords" content="kandu plans, pricing, comparison, job search, subscription" />
         <meta property="og:title" content="Kandu Plans Comparison: Starter vs Pro vs Premium" />
@@ -53,7 +53,7 @@ const ComparePlans: React.FC = () => {
             <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
               <span>By Kandu Team</span>
               <span>•</span>
-              <span>January 15, 2024</span>
+              <span>August 15, 2025</span>
               <span>•</span>
               <span>5 min read</span>
             </div>
@@ -348,19 +348,19 @@ const ComparePlans: React.FC = () => {
               </div>
             </div>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Value Per Application</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Value Per Application (Yearly)</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">$0.38</div>
-                <div className="text-sm text-gray-600">Starter (monthly)</div>
+                <div className="text-2xl font-bold text-gray-900">$0.32</div>
+                <div className="text-sm text-gray-600">Starter</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">$0.20</div>
-                <div className="text-sm text-gray-600">Pro (monthly)</div>
+                <div className="text-2xl font-bold text-gray-900">$0.12</div>
+                <div className="text-sm text-gray-600">Pro</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-green-600">$0.00</div>
-                <div className="text-sm text-gray-600">Premium (unlimited)</div>
+                <div className="text-sm text-gray-600">Premium</div>
               </div>
             </div>
           </div>
