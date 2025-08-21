@@ -75,20 +75,20 @@ const ComparePlans: React.FC = () => {
                 <tbody>
                   <tr className="border-b border-gray-100">
                     <td className="py-4 px-4 font-semibold text-gray-900">Starter</td>
-                    <td className="py-4 px-4">$19/month</td>
-                    <td className="py-4 px-4">$160/year</td>
+                    <td className="py-4 px-4 text-gray-900">$19/month</td>
+                    <td className="py-4 px-4 text-gray-900">$160/year</td>
                     <td className="py-4 px-4 text-gray-600">Students & Early Professionals</td>
                   </tr>
                   <tr className="border-b border-gray-100">
                     <td className="py-4 px-4 font-semibold text-gray-900">Pro ⭐</td>
-                    <td className="py-4 px-4">$39/month</td>
-                    <td className="py-4 px-4">$235/year</td>
+                    <td className="py-4 px-4 text-gray-900">$39/month</td>
+                    <td className="py-4 px-4 text-gray-900">$235/year</td>
                     <td className="py-4 px-4 text-gray-600">Serious Job Seekers</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-semibold text-gray-900">Premium 🚀</td>
-                    <td className="py-4 px-4">$79/month</td>
-                    <td className="py-4 px-4">$349/year</td>
+                    <td className="py-4 px-4 text-gray-900">$79/month</td>
+                    <td className="py-4 px-4 text-gray-900">$349/year</td>
                     <td className="py-4 px-4 text-gray-600">Career Accelerators</td>
                   </tr>
                 </tbody>
@@ -106,29 +106,29 @@ const ComparePlans: React.FC = () => {
             
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Perfect For:</h3>
             <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
-              <li>Students entering the job market</li>
-              <li>Early professionals looking for their first role</li>
-              <li>Job seekers on a budget</li>
-              <li>Those testing the waters with AI-powered job search</li>
+              <li className="text-gray-700">Students entering the job market</li>
+              <li className="text-gray-700">Early professionals looking for their first role</li>
+              <li className="text-gray-700">Job seekers on a budget</li>
+              <li className="text-gray-700">Those testing the waters with AI-powered job search</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Features:</h3>
             <ul className="space-y-3 mb-6">
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Up to 50 auto-applies per month</strong> - Perfect for targeted applications</span>
+                <span className="text-gray-700"><strong>Up to 50 auto-applies per month</strong> - Perfect for targeted applications</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Daily job matches</strong> - Tailored to your profile and preferences</span>
+                <span className="text-gray-700"><strong>Daily job matches</strong> - Tailored to your profile and preferences</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Save & track jobs</strong> - Keep organized with your job search</span>
+                <span className="text-gray-700"><strong>Save & track jobs</strong> - Keep organized with your job search</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Priority email support</strong> - Get help when you need it</span>
+                <span className="text-gray-700"><strong>Priority email support</strong> - Get help when you need it</span>
               </li>
             </ul>
 
@@ -154,10 +154,10 @@ const ComparePlans: React.FC = () => {
             
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Perfect For:</h3>
             <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
-              <li>Serious job seekers actively applying</li>
-              <li>Professionals looking to change careers</li>
-              <li>Those who want consistent application volume</li>
-              <li>Job seekers who value advanced matching</li>
+              <li className="text-gray-700">Serious job seekers actively applying</li>
+              <li className="text-gray-700">Professionals looking to change careers</li>
+              <li className="text-gray-700">Those who want consistent application volume</li>
+              <li className="text-gray-700">Job seekers who value advanced matching</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Features:</h3>
@@ -206,10 +206,10 @@ const ComparePlans: React.FC = () => {
             
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Perfect For:</h3>
             <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
-              <li>Ambitious professionals seeking rapid career growth</li>
-              <li>Senior-level job seekers</li>
-              <li>Those who want the fastest route to interviews</li>
-              <li>Job seekers who value personalized support</li>
+              <li className="text-gray-700">Ambitious professionals seeking rapid career growth</li>
+              <li className="text-gray-700">Senior-level job seekers</li>
+              <li className="text-gray-700">Those who want the fastest route to interviews</li>
+              <li className="text-gray-700">Job seekers who value personalized support</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Features:</h3>
@@ -265,27 +265,27 @@ const ComparePlans: React.FC = () => {
                 <tbody>
                   <tr className="border-b border-gray-100">
                     <td className="py-4 px-4 font-medium text-gray-900">Monthly Auto-Applies</td>
-                    <td className="py-4 px-4 text-center">50</td>
-                    <td className="py-4 px-4 text-center">200</td>
+                    <td className="py-4 px-4 text-center text-gray-900">50</td>
+                    <td className="py-4 px-4 text-center text-gray-900">200</td>
                     <td className="py-4 px-4 text-center font-semibold text-green-600">Unlimited</td>
                   </tr>
                   <tr className="border-b border-gray-100">
                     <td className="py-4 px-4 font-medium text-gray-900">AI Resume Matching</td>
-                    <td className="py-4 px-4 text-center">Basic</td>
-                    <td className="py-4 px-4 text-center">Advanced</td>
-                    <td className="py-4 px-4 text-center">Advanced</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Basic</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Advanced</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Advanced</td>
                   </tr>
                   <tr className="border-b border-gray-100">
                     <td className="py-4 px-4 font-medium text-gray-900">Job Alerts</td>
-                    <td className="py-4 px-4 text-center">Daily</td>
-                    <td className="py-4 px-4 text-center">High Volume</td>
-                    <td className="py-4 px-4 text-center">High Volume</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Daily</td>
+                    <td className="py-4 px-4 text-center text-gray-900">High Volume</td>
+                    <td className="py-4 px-4 text-center text-gray-900">High Volume</td>
                   </tr>
                   <tr className="border-b border-gray-100">
                     <td className="py-4 px-4 font-medium text-gray-900">Application Tracking</td>
-                    <td className="py-4 px-4 text-center">Basic</td>
-                    <td className="py-4 px-4 text-center">Real-time</td>
-                    <td className="py-4 px-4 text-center">Real-time</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Basic</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Real-time</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Real-time</td>
                   </tr>
                   <tr className="border-b border-gray-100">
                     <td className="py-4 px-4 font-medium text-gray-900">Resume Feedback</td>
@@ -301,15 +301,15 @@ const ComparePlans: React.FC = () => {
                   </tr>
                   <tr className="border-b border-gray-100">
                     <td className="py-4 px-4 font-medium text-gray-900">Support</td>
-                    <td className="py-4 px-4 text-center">Email</td>
-                    <td className="py-4 px-4 text-center">Email</td>
-                    <td className="py-4 px-4 text-center">Email + Chat</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Email</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Email</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Email + Chat</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-medium text-gray-900">Beta Features</td>
                     <td className="py-4 px-4 text-center text-red-500">❌</td>
-                    <td className="py-4 px-4 text-center">Early Access</td>
-                    <td className="py-4 px-4 text-center">Premium Access</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Early Access</td>
+                    <td className="py-4 px-4 text-center text-gray-900">Premium Access</td>
                   </tr>
                 </tbody>
               </table>
