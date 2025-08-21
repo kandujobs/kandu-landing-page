@@ -469,11 +469,11 @@ const ComparePlans: React.FC = () => {
         </main>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white py-12 mt-16">
+        <footer className="bg-gray-900 text-gray-100 py-12 mt-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <div className="flex items-center justify-center space-x-3 mb-6">
               <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">K</span>
+                <span className="text-gray-900 font-bold text-sm">K</span>
               </div>
               <span className="text-xl font-bold">Kandu</span>
             </div>
@@ -481,9 +481,9 @@ const ComparePlans: React.FC = () => {
               AI-powered job search that gets you hired faster.
             </p>
             <div className="flex justify-center space-x-6 text-sm text-gray-400">
-              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-              <a href="mailto:support@kandujobs.com" className="hover:text-white transition-colors">Support</a>
+              <Link to="/privacy" className="hover:text-gray-100 transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-gray-100 transition-colors">Terms of Service</Link>
+              <a href="mailto:support@kandujobs.com" className="hover:text-gray-100 transition-colors">Support</a>
             </div>
           </div>
         </footer>
