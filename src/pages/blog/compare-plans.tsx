@@ -26,12 +26,14 @@ const ComparePlans: React.FC = () => {
                 </div>
                 <span className="text-xl font-bold text-gray-900">Kandu</span>
               </Link>
-              <Link 
-                to="/app" 
+              <a 
+                href="https://app.kandujobs.com" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all"
               >
                 Start Free Trial
-              </Link>
+              </a>
             </nav>
           </div>
         </header>
@@ -445,12 +447,14 @@ const ComparePlans: React.FC = () => {
               Start your 2-day free trial today and see which plan works best for you. 
               You can upgrade or downgrade your plan at any time.
             </p>
-            <Link 
-              to="/app" 
+            <a 
+              href="https://app.kandujobs.com" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all"
             >
               Start Free Trial
-            </Link>
+            </a>
             <p className="text-sm opacity-75 mt-4">
               All plans come with our 2-day free trial. Cancel anytime with no questions asked.
             </p>
