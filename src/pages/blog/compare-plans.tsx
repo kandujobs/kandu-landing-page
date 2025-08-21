@@ -164,23 +164,23 @@ const ComparePlans: React.FC = () => {
             <ul className="space-y-3 mb-6">
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Up to 200 auto-applies per month</strong> - 4x more applications than Starter</span>
+                <span className="text-gray-700"><strong>Up to 200 auto-applies per month</strong> - 4x more applications than Starter</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>AI-optimized resume matching</strong> - Every application is tailored</span>
+                <span className="text-gray-700"><strong>AI-optimized resume matching</strong> - Every application is tailored</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Daily job alerts (higher volume)</strong> - More opportunities delivered</span>
+                <span className="text-gray-700"><strong>Daily job alerts (higher volume)</strong> - More opportunities delivered</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Track applications in real time</strong> - Monitor your progress</span>
+                <span className="text-gray-700"><strong>Track applications in real time</strong> - Monitor your progress</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Access to upcoming features first</strong> - Early access to new tools</span>
+                <span className="text-gray-700"><strong>Access to upcoming features first</strong> - Early access to new tools</span>
               </li>
             </ul>
 
@@ -216,27 +216,27 @@ const ComparePlans: React.FC = () => {
             <ul className="space-y-3 mb-6">
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Unlimited auto-applies</strong> - Apply to as many jobs as you want</span>
+                <span className="text-gray-700"><strong>Unlimited auto-applies</strong> - Apply to as many jobs as you want</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Everything in Pro</strong> - All Pro features included</span>
+                <span className="text-gray-700"><strong>Everything in Pro</strong> - All Pro features included</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Personalized resume feedback</strong> - AI-driven insights to improve your resume</span>
+                <span className="text-gray-700"><strong>Personalized resume feedback</strong> - AI-driven insights to improve your resume</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Priority queue for applications</strong> - Faster processing times</span>
+                <span className="text-gray-700"><strong>Priority queue for applications</strong> - Faster processing times</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Dedicated email + chat support</strong> - Personal assistance when needed</span>
+                <span className="text-gray-700"><strong>Dedicated email + chat support</strong> - Personal assistance when needed</span>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-3 mt-1">✅</span>
-                <span><strong>Access to premium beta features</strong> - Try cutting-edge tools first</span>
+                <span className="text-gray-700"><strong>Access to premium beta features</strong> - Try cutting-edge tools first</span>
               </li>
             </ul>
 
@@ -325,24 +325,24 @@ const ComparePlans: React.FC = () => {
               <div className="bg-gray-50 rounded-lg p-6">
                 <h4 className="font-semibold text-gray-900 mb-3">Starter Plan</h4>
                 <div className="space-y-2 text-sm">
-                  <div>Monthly: $19 × 12 = $228</div>
-                  <div>Yearly: $160</div>
+                  <div className="text-gray-700">Monthly: $19 × 12 = $228</div>
+                  <div className="text-gray-700">Yearly: $160</div>
                   <div className="font-semibold text-green-600">Savings: $68 (30% off)</div>
                 </div>
               </div>
               <div className="bg-gray-50 rounded-lg p-6">
                 <h4 className="font-semibold text-gray-900 mb-3">Pro Plan</h4>
                 <div className="space-y-2 text-sm">
-                  <div>Monthly: $39 × 12 = $468</div>
-                  <div>Yearly: $235</div>
+                  <div className="text-gray-700">Monthly: $39 × 12 = $468</div>
+                  <div className="text-gray-700">Yearly: $235</div>
                   <div className="font-semibold text-green-600">Savings: $233 (50% off)</div>
                 </div>
               </div>
               <div className="bg-gray-50 rounded-lg p-6">
                 <h4 className="font-semibold text-gray-900 mb-3">Premium Plan</h4>
                 <div className="space-y-2 text-sm">
-                  <div>Monthly: $79 × 12 = $948</div>
-                  <div>Yearly: $349</div>
+                  <div className="text-gray-700">Monthly: $79 × 12 = $948</div>
+                  <div className="text-gray-700">Yearly: $349</div>
                   <div className="font-semibold text-green-600">Savings: $599 (63% off)</div>
                 </div>
               </div>
