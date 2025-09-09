@@ -581,15 +581,19 @@ const LandingPage: React.FC = () => {
               </motion.span>
             </motion.h2>
             
-            <motion.p 
-              className="text-xl sm:text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto mb-12 px-4 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            <motion.div 
+              className="text-xl sm:text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto mb-8 px-4 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Our AI learns your preferences with every swipe. Perfect for quick sessions 
-              during your <span className="text-white font-semibold">commute, lunch break, or between meetings</span>.
-            </motion.p>
+              <p className="mb-4">
+                Our AI learns your preferences with every swipe.
+              </p>
+              <p>
+                Perfect for quick sessions during your <span className="text-white font-semibold">commute, lunch break, or between meetings</span>.
+              </p>
+            </motion.div>
             
             {/* Interactive swipe demo */}
           <motion.div
@@ -624,15 +628,15 @@ const LandingPage: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Image Section with 3D Effects */}
+          {/* Demo Video Container - Phone Width */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ duration: 1, delay: 1 }}
-            className="relative max-w-4xl mx-auto mb-16 px-4"
+            className="relative max-w-sm mx-auto mb-16 px-4"
             style={{ perspective: "1000px" }}
           >
-            {/* 3D Card Container */}
+            {/* Phone-width Video Container */}
             <motion.div
               whileHover={{ 
                 rotateY: 5, 
@@ -640,53 +644,71 @@ const LandingPage: React.FC = () => {
                 scale: 1.02,
                 transition: { duration: 0.3 }
               }}
-              className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-white/20 p-8"
+              className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-white/20 p-6"
               style={{ transformStyle: "preserve-3d" }}
             >
-              {/* KanduSwipe Image with glassmorphism */}
-              <div className="relative">
-                <img
-                  src="/KanduSwipe.png"
-                  alt="Kandu Swipe Interface - Don't search, swipe to find your perfect job"
-                  className="w-full h-auto rounded-2xl object-cover shadow-xl"
-                />
+              {/* Video placeholder container */}
+              <div className="relative w-full aspect-[9/16] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-xl">
+                {/* Placeholder for demo video */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <motion.div
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        opacity: [0.5, 0.8, 0.5]
+                      }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity, 
+                        ease: "easeInOut" 
+                      }}
+                      className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4"
+                    >
+                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </motion.div>
+                    <p className="text-white/70 text-sm font-medium">Demo Video</p>
+                    <p className="text-white/50 text-xs mt-1">Coming Soon</p>
+                  </div>
+                </div>
                 
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 rounded-2xl" />
-            </div>
-
+              </div>
+              
               {/* Floating UI elements */}
-            <motion.div
-              animate={{
+              <motion.div
+                animate={{
                   y: [0, -15, 0],
                   rotate: [0, 10, 0],
                   scale: [1, 1.1, 1]
-              }}
-              transition={{
+                }}
+                transition={{
                   duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-                className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl shadow-lg flex items-center justify-center"
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl shadow-lg flex items-center justify-center"
               >
-                <FiSmartphone className="w-8 h-8 text-white" />
+                <FiSmartphone className="w-6 h-6 text-white" />
               </motion.div>
               
-            <motion.div
-              animate={{
+              <motion.div
+                animate={{
                   y: [0, 15, 0],
                   rotate: [0, -10, 0],
                   scale: [1, 1.1, 1]
-              }}
-              transition={{
+                }}
+                transition={{
                   duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-                className="absolute -bottom-6 -right-6 w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl shadow-lg flex items-center justify-center"
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+                className="absolute -bottom-4 -right-4 w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl shadow-lg flex items-center justify-center"
               >
-                <FiHeart className="w-7 h-7 text-white" />
+                <FiHeart className="w-5 h-5 text-white" />
               </motion.div>
               
               {/* Glow effects */}
