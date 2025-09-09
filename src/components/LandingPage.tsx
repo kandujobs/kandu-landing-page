@@ -162,13 +162,13 @@ const LandingPage: React.FC = () => {
   const handleApply = () => {
     setSwipeDirection('right'); // Apply swipes right
     const nextIndex = (currentCardIndex + 1) % FEATURE_CARDS.length;
-    setTimeout(() => setCurrentCardIndex(nextIndex), 50);
+      setTimeout(() => setCurrentCardIndex(nextIndex), 50);
   };
 
   const handlePass = () => {
     setSwipeDirection('left'); // Pass swipes left
     const nextIndex = (currentCardIndex + 1) % FEATURE_CARDS.length;
-    setTimeout(() => setCurrentCardIndex(nextIndex), 50);
+      setTimeout(() => setCurrentCardIndex(nextIndex), 50);
   };
 
 
@@ -239,48 +239,12 @@ const LandingPage: React.FC = () => {
         </div>
       </motion.nav>
 
-      {/* Hero Section - Ultra Modern with Advanced Animations */}
+      {/* Hero Section - Subtle Dark Styling */}
       <section className="relative min-h-screen overflow-hidden w-full flex items-center">
-        {/* Dynamic gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-          {/* Animated mesh gradient */}
-          <motion.div
-            animate={{
-              background: [
-                "radial-gradient(circle at 20% 50%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 40% 80%, #ec4899 0%, transparent 50%)",
-                "radial-gradient(circle at 80% 20%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 20% 80%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 60% 40%, #ec4899 0%, transparent 50%)",
-                "radial-gradient(circle at 40% 80%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 60% 20%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 20% 60%, #ec4899 0%, transparent 50%)"
-              ]
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute inset-0 opacity-60"
-          />
-          
-          {/* Morphing blobs */}
-          <MorphingBlob delay={0} size={300} color="purple" style={{ top: '10%', left: '10%' }} />
-          <MorphingBlob delay={1} size={400} color="blue" style={{ top: '60%', right: '10%' }} />
-          <MorphingBlob delay={2} size={250} color="pink" style={{ bottom: '20%', left: '60%' }} />
-          
-          {/* Floating particles */}
-          <FloatingParticles />
-          
-          {/* Interactive cursor glow */}
-          <motion.div
-            className="absolute w-96 h-96 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-3xl pointer-events-none"
-            animate={{
-              x: mousePosition.x - 192,
-              y: mousePosition.y - 192,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 50,
-              damping: 15
-            }}
-          />
+        {/* Simple dark background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-800/50 to-slate-900/50" />
         </div>
 
         {/* Content */}
@@ -290,18 +254,14 @@ const LandingPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            {/* Animated badge */}
+            {/* Simple badge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full mb-8"
             >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-2"
-              />
+              <div className="w-2 h-2 bg-gray-400 rounded-full mr-2" />
               <span className="text-sm font-medium">Now in Beta</span>
             </motion.div>
             
@@ -312,22 +272,9 @@ const LandingPage: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               More interviews,
-              <motion.span 
-                className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent"
-            animate={{
-                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-            }}
-            transition={{
-                  duration: 3,
-              repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                style={{
-                  backgroundSize: "200% 200%"
-                }}
-              >
+              <span className="block text-gray-300">
                 less effort
-              </motion.span>
+              </span>
             </motion.h1>
             
             <motion.p 
@@ -349,32 +296,11 @@ const LandingPage: React.FC = () => {
               <motion.button
                 onClick={handleGetStarted}
                 disabled={isLoading}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-5 px-10 rounded-2xl overflow-hidden shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-3"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-white/10 backdrop-blur-xl text-white font-semibold py-5 px-10 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-3"
               >
-                {/* Animated background */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-                
-                {/* Shimmer effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  animate={{
-                    x: ['-100%', '100%']
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-                
-                <span className="relative z-10 text-lg">
+                <span className="text-lg">
                   {isLoading ? (
                     <>
                       <motion.div 
@@ -395,11 +321,11 @@ const LandingPage: React.FC = () => {
               <motion.button
                 onClick={handleSignIn}
                 disabled={isLoading}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold py-5 px-10 rounded-2xl hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-xl hover:shadow-white/10"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-white/5 backdrop-blur-xl text-white font-semibold py-5 px-10 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span className="relative z-10 text-lg">Sign In</span>
+                <span className="text-lg">Sign In</span>
               </motion.button>
             </motion.div>
 
@@ -479,10 +405,10 @@ const LandingPage: React.FC = () => {
       <section className="relative py-8 overflow-hidden w-full bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="flex items-center">
           {/* Scrolling Company Icons */}
-          <motion.div
+            <motion.div
             className="flex items-center gap-8 whitespace-nowrap"
             animate={{ x: [0, -100] }}
-            transition={{
+              transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
@@ -493,21 +419,21 @@ const LandingPage: React.FC = () => {
           >
             {/* First set of icons */}
             {[
-              { name: "Google", color: "from-blue-500 to-blue-600" },
-              { name: "Microsoft", color: "from-green-500 to-green-600" },
-              { name: "Apple", color: "from-gray-600 to-gray-700" },
-              { name: "Amazon", color: "from-orange-500 to-orange-600" },
-              { name: "Meta", color: "from-blue-600 to-blue-700" },
-              { name: "Netflix", color: "from-red-500 to-red-600" },
-              { name: "Spotify", color: "from-green-600 to-green-700" },
+              { name: "Google", color: "from-gray-600 to-gray-700" },
+              { name: "Microsoft", color: "from-gray-500 to-gray-600" },
+              { name: "Apple", color: "from-gray-700 to-gray-800" },
+              { name: "Amazon", color: "from-gray-600 to-gray-700" },
+              { name: "Meta", color: "from-gray-500 to-gray-600" },
+              { name: "Netflix", color: "from-gray-600 to-gray-700" },
+              { name: "Spotify", color: "from-gray-500 to-gray-600" },
               { name: "Uber", color: "from-gray-700 to-gray-800" },
-              { name: "Airbnb", color: "from-pink-500 to-pink-600" },
-              { name: "Tesla", color: "from-red-600 to-red-700" },
-              { name: "Stripe", color: "from-purple-500 to-purple-600" },
-              { name: "Shopify", color: "from-green-500 to-green-600" },
-              { name: "Slack", color: "from-purple-600 to-purple-700" },
-              { name: "Zoom", color: "from-blue-500 to-blue-600" },
-              { name: "Dropbox", color: "from-blue-600 to-blue-700" },
+              { name: "Airbnb", color: "from-gray-600 to-gray-700" },
+              { name: "Tesla", color: "from-gray-500 to-gray-600" },
+              { name: "Stripe", color: "from-gray-600 to-gray-700" },
+              { name: "Shopify", color: "from-gray-500 to-gray-600" },
+              { name: "Slack", color: "from-gray-600 to-gray-700" },
+              { name: "Zoom", color: "from-gray-500 to-gray-600" },
+              { name: "Dropbox", color: "from-gray-600 to-gray-700" },
               { name: "GitHub", color: "from-gray-700 to-gray-800" }
             ].map((company) => (
               <div
@@ -518,27 +444,27 @@ const LandingPage: React.FC = () => {
                   <span className="text-white font-bold text-lg">
                     {company.name.charAt(0)}
                   </span>
-                </div>
+          </div>
               </div>
             ))}
             
             {/* Duplicate set for seamless loop */}
             {[
-              { name: "Google", color: "from-blue-500 to-blue-600" },
-              { name: "Microsoft", color: "from-green-500 to-green-600" },
-              { name: "Apple", color: "from-gray-600 to-gray-700" },
-              { name: "Amazon", color: "from-orange-500 to-orange-600" },
-              { name: "Meta", color: "from-blue-600 to-blue-700" },
-              { name: "Netflix", color: "from-red-500 to-red-600" },
-              { name: "Spotify", color: "from-green-600 to-green-700" },
+              { name: "Google", color: "from-gray-600 to-gray-700" },
+              { name: "Microsoft", color: "from-gray-500 to-gray-600" },
+              { name: "Apple", color: "from-gray-700 to-gray-800" },
+              { name: "Amazon", color: "from-gray-600 to-gray-700" },
+              { name: "Meta", color: "from-gray-500 to-gray-600" },
+              { name: "Netflix", color: "from-gray-600 to-gray-700" },
+              { name: "Spotify", color: "from-gray-500 to-gray-600" },
               { name: "Uber", color: "from-gray-700 to-gray-800" },
-              { name: "Airbnb", color: "from-pink-500 to-pink-600" },
-              { name: "Tesla", color: "from-red-600 to-red-700" },
-              { name: "Stripe", color: "from-purple-500 to-purple-600" },
-              { name: "Shopify", color: "from-green-500 to-green-600" },
-              { name: "Slack", color: "from-purple-600 to-purple-700" },
-              { name: "Zoom", color: "from-blue-500 to-blue-600" },
-              { name: "Dropbox", color: "from-blue-600 to-blue-700" },
+              { name: "Airbnb", color: "from-gray-600 to-gray-700" },
+              { name: "Tesla", color: "from-gray-500 to-gray-600" },
+              { name: "Stripe", color: "from-gray-600 to-gray-700" },
+              { name: "Shopify", color: "from-gray-500 to-gray-600" },
+              { name: "Slack", color: "from-gray-600 to-gray-700" },
+              { name: "Zoom", color: "from-gray-500 to-gray-600" },
+              { name: "Dropbox", color: "from-gray-600 to-gray-700" },
               { name: "GitHub", color: "from-gray-700 to-gray-800" }
             ].map((company) => (
               <div
@@ -649,10 +575,10 @@ const LandingPage: React.FC = () => {
               </motion.span>
             </motion.h2>
             
-            <motion.div 
+          <motion.div
               className="text-xl sm:text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto mb-8 px-4 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <p className="mb-4">
@@ -660,9 +586,9 @@ const LandingPage: React.FC = () => {
               </p>
               <p>
                 Perfect for quick sessions during your <span className="text-white font-semibold">commute, lunch break, or between meetings</span>.
-              </p>
-            </motion.div>
-            
+            </p>
+          </motion.div>
+
           </motion.div>
 
           {/* Demo Video Container - Phone Width */}
@@ -707,42 +633,42 @@ const LandingPage: React.FC = () => {
                     </motion.div>
                     <p className="text-white/70 text-sm font-medium">Demo Video</p>
                     <p className="text-white/50 text-xs mt-1">Coming Soon</p>
-                  </div>
-                </div>
-                
+              </div>
+            </div>
+
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 rounded-2xl" />
               </div>
               
               {/* Floating UI elements */}
-              <motion.div
-                animate={{
+            <motion.div
+              animate={{
                   y: [0, -15, 0],
                   rotate: [0, 10, 0],
                   scale: [1, 1.1, 1]
-                }}
-                transition={{
+              }}
+              transition={{
                   duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
                 className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl shadow-lg flex items-center justify-center"
               >
                 <FiSmartphone className="w-6 h-6 text-white" />
               </motion.div>
               
-              <motion.div
-                animate={{
+            <motion.div
+              animate={{
                   y: [0, 15, 0],
                   rotate: [0, -10, 0],
                   scale: [1, 1.1, 1]
-                }}
-                transition={{
+              }}
+              transition={{
                   duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
                 className="absolute -bottom-4 -right-4 w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl shadow-lg flex items-center justify-center"
               >
                 <FiHeart className="w-5 h-5 text-white" />
@@ -824,13 +750,13 @@ const LandingPage: React.FC = () => {
           {/* Feature Card Container - Ultra Modern */}
           <div className="relative max-w-lg mx-auto px-4">
             <AnimatePresence mode="wait">
-              <motion.div
-                key={currentCardIndex}
+                <motion.div
+                  key={currentCardIndex}
                 initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                exit={{ 
-                  opacity: 0, 
-                  x: swipeDirection === 'right' ? 300 : -300, 
+                  exit={{ 
+                    opacity: 0, 
+                    x: swipeDirection === 'right' ? 300 : -300, 
                   rotate: swipeDirection === 'right' ? 15 : -15,
                   scale: 0.8
                 }}
@@ -970,7 +896,7 @@ const LandingPage: React.FC = () => {
                       <FiHeart className="w-5 h-5" />
                       <span>Apply</span>
                     </motion.button>
-                  </motion.div>
+                </motion.div>
                 </motion.div>
             </AnimatePresence>
           </div>
@@ -979,7 +905,7 @@ const LandingPage: React.FC = () => {
 
 
 
-
+        
       {/* FAQ Section - Modern Dark Styling */}
       <section id="faq-section" className="relative py-24 overflow-hidden w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         {/* Animated Background Elements */}
@@ -1119,10 +1045,10 @@ const LandingPage: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 + (index * 0.1) }}
                   >
-                    <span>Read full answer</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                  <span>Read full answer</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                   </motion.div>
                 </div>
               </motion.div>
@@ -1258,3 +1184,4 @@ const LandingPage: React.FC = () => {
 };
 
 export default LandingPage;
+
