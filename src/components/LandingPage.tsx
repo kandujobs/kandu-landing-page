@@ -509,7 +509,7 @@ const LandingPage: React.FC = () => {
               { name: "Zoom", color: "from-blue-500 to-blue-600" },
               { name: "Dropbox", color: "from-blue-600 to-blue-700" },
               { name: "GitHub", color: "from-gray-700 to-gray-800" }
-            ].map((company, index) => (
+            ].map((company) => (
               <div
                 key={`first-${company.name}`}
                 className="flex-shrink-0"
@@ -540,7 +540,7 @@ const LandingPage: React.FC = () => {
               { name: "Zoom", color: "from-blue-500 to-blue-600" },
               { name: "Dropbox", color: "from-blue-600 to-blue-700" },
               { name: "GitHub", color: "from-gray-700 to-gray-800" }
-            ].map((company, index) => (
+            ].map((company) => (
               <div
                 key={`second-${company.name}`}
                 className="flex-shrink-0"
