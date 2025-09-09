@@ -477,8 +477,9 @@ const LandingPage: React.FC = () => {
 
       {/* Don't Search, Swipe Section - Ultra Modern with Parallax */}
       <section className="relative py-32 overflow-hidden w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-        {/* Smooth transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/50 to-transparent pointer-events-none" />
+        {/* Enhanced smooth transition overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/30 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-transparent to-slate-800/20 pointer-events-none" />
         
         {/* Parallax background layers */}
         <motion.div
@@ -581,34 +582,71 @@ const LandingPage: React.FC = () => {
               </p>
             </motion.div>
             
-            {/* Interactive swipe demo */}
-          <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            {/* Company Icons Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="relative max-w-md mx-auto"
+              className="relative max-w-4xl mx-auto"
             >
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 shadow-2xl">
-                <div className="flex items-center justify-center space-x-4 mb-6">
-                  <motion.div
-                    animate={{ x: [0, 20, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center"
-                  >
-                    <FiX className="w-6 h-6 text-white" />
-                  </motion.div>
-                  <span className="text-white text-lg font-semibold">Swipe Left to Pass</span>
-                </div>
+              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-2xl">
+                <motion.p 
+                  className="text-center text-gray-300 text-lg mb-8"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 1 }}
+                >
+                  Jobs from top companies available on our platform
+                </motion.p>
                 
-                <div className="flex items-center justify-center space-x-4">
-                  <span className="text-white text-lg font-semibold">Swipe Right to Apply</span>
-                  <motion.div
-                    animate={{ x: [0, -20, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                    className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center"
-                  >
-                    <FiHeart className="w-6 h-6 text-white" />
-                  </motion.div>
+                {/* Company Icons Grid */}
+                <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-6 items-center justify-items-center">
+                  {[
+                    { name: "Google", color: "from-blue-500 to-blue-600" },
+                    { name: "Microsoft", color: "from-green-500 to-green-600" },
+                    { name: "Apple", color: "from-gray-600 to-gray-700" },
+                    { name: "Amazon", color: "from-orange-500 to-orange-600" },
+                    { name: "Meta", color: "from-blue-600 to-blue-700" },
+                    { name: "Netflix", color: "from-red-500 to-red-600" },
+                    { name: "Spotify", color: "from-green-600 to-green-700" },
+                    { name: "Uber", color: "from-gray-700 to-gray-800" },
+                    { name: "Airbnb", color: "from-pink-500 to-pink-600" },
+                    { name: "Tesla", color: "from-red-600 to-red-700" },
+                    { name: "Stripe", color: "from-purple-500 to-purple-600" },
+                    { name: "Shopify", color: "from-green-500 to-green-600" },
+                    { name: "Slack", color: "from-purple-600 to-purple-700" },
+                    { name: "Zoom", color: "from-blue-500 to-blue-600" },
+                    { name: "Dropbox", color: "from-blue-600 to-blue-700" },
+                    { name: "GitHub", color: "from-gray-700 to-gray-800" }
+                  ].map((company, index) => (
+                    <motion.div
+                      key={company.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        duration: 0.5, 
+                        delay: 1.2 + (index * 0.1),
+                        ease: "easeOut"
+                      }}
+                      whileHover={{ 
+                        scale: 1.1, 
+                        y: -5,
+                        transition: { duration: 0.2 }
+                      }}
+                      className="group relative"
+                    >
+                      <div className={`w-12 h-12 bg-gradient-to-r ${company.color} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                        <span className="text-white font-bold text-xs">
+                          {company.name.charAt(0)}
+                        </span>
+                      </div>
+                      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="text-white text-xs font-medium whitespace-nowrap">
+                          {company.name}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </motion.div>
