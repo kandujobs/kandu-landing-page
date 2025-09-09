@@ -484,51 +484,6 @@ const LandingPage: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20" />
         </motion.div>
         
-        {/* Animated mesh gradient */}
-          <motion.div
-            animate={{
-            background: [
-              "radial-gradient(circle at 30% 40%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 70% 60%, #3b82f6 0%, transparent 50%)",
-              "radial-gradient(circle at 70% 40%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 30% 60%, #3b82f6 0%, transparent 50%)"
-            ]
-            }}
-            transition={{
-            duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          className="absolute inset-0 opacity-30"
-          />
-        
-        {/* Floating geometric shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(8)].map((_, i) => (
-          <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
-            animate={{
-                y: [0, -100, 0],
-                x: [0, Math.random() * 100 - 50, 0],
-                opacity: [0, 1, 0],
-                scale: [0, 1, 0],
-            }}
-            transition={{
-                duration: 4 + Math.random() * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-                delay: Math.random() * 2,
-              }}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Morphing blobs */}
-        <MorphingBlob delay={0} size={400} color="purple" style={{ top: '20%', left: '5%' }} />
-        <MorphingBlob delay={1.5} size={300} color="blue" style={{ bottom: '20%', right: '5%' }} />
 
         {/* Content */}
         <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -545,22 +500,9 @@ const LandingPage: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Don't search,{' '}
-              <motion.span 
-                className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent"
-            animate={{
-                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-            }}
-            transition={{
-                  duration: 3,
-              repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                style={{
-                  backgroundSize: "200% 200%"
-                }}
-              >
+              <span className="text-gray-300">
                 swipe
-              </motion.span>
+              </span>
             </motion.h2>
             
           <motion.div
@@ -896,27 +838,7 @@ const LandingPage: React.FC = () => {
         
       {/* FAQ Section - Modern Dark Styling */}
       <section id="faq-section" className="relative py-24 overflow-hidden w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{ 
-              backgroundPosition: ['0% 0%', '100% 100%'],
-            }}
-            transition={{ 
-              duration: 20, 
-              repeat: Infinity, 
-              ease: "linear" 
-            }}
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: `radial-gradient(circle at 20% 80%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #3b82f6 0%, transparent 50%)`,
-              backgroundSize: '100% 100%',
-            }}
-          />
-        </div>
 
-        {/* Floating Particles */}
-        <FloatingParticles />
 
         {/* Content */}
         <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
@@ -932,11 +854,9 @@ const LandingPage: React.FC = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                Frequently Asked
+              <span className="text-white">
+                Frequently Asked Questions
               </span>
-              <br />
-              <span className="text-white">Questions</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -980,35 +900,6 @@ const LandingPage: React.FC = () => {
                 className="group relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20 overflow-hidden cursor-pointer"
                 onClick={() => window.location.href = '/blog'}
               >
-                {/* Animated background gradient */}
-                <motion.div
-                  className={`absolute inset-0 bg-gradient-to-br ${faq.gradient} opacity-10`}
-                  animate={{
-                    background: [
-                      `linear-gradient(45deg, ${faq.gradient.split(' ')[1]}, ${faq.gradient.split(' ')[3]})`,
-                      `linear-gradient(225deg, ${faq.gradient.split(' ')[1]}, ${faq.gradient.split(' ')[3]})`,
-                      `linear-gradient(45deg, ${faq.gradient.split(' ')[1]}, ${faq.gradient.split(' ')[3]})`
-                    ]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-                
-                {/* Shimmer effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                  animate={{
-                    x: ['-100%', '100%']
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
                 
                 <div className="relative z-10">
                   <motion.h3 
@@ -1051,19 +942,7 @@ const LandingPage: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="relative bg-white/10 backdrop-blur-xl text-white font-semibold py-4 px-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-200 shadow-lg hover:shadow-xl overflow-hidden group"
             >
-              {/* Shimmer effect */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                animate={{
-                  x: ['-100%', '100%']
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <span className="relative z-10">View All FAQ Articles</span>
+              <span>View All FAQ Articles</span>
             </motion.button>
           </div>
         </div>
@@ -1074,36 +953,8 @@ const LandingPage: React.FC = () => {
         {/* Smooth transition overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-purple-50/40 via-transparent to-transparent pointer-events-none" />
         
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600">
-          {/* Moving Particles */}
-          <div className="absolute inset-0">
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                animate={{
-                  y: [0, -100, 0],
-                  x: [0, Math.random() * 50 - 25, 0],
-                  opacity: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 3 + Math.random() * 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random() * 2,
-                }}
-                className="absolute w-2 h-2 bg-white/30 rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
-              />
-            ))}
-          </div>
-          
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/90 via-blue-600/90 to-indigo-600/90" />
-        </div>
+        {/* Simple Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600" />
 
         {/* Content */}
         <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center">
