@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { FiArrowRight, FiX, FiHeart, FiTrendingUp, FiCheck, FiSmartphone, FiStar, FiUsers, FiAward } from 'react-icons/fi';
+import { FiX, FiHeart, FiTrendingUp, FiCheck, FiSmartphone, FiUsers } from 'react-icons/fi';
 
 // Feature cards data for the interactive swiper
 const FEATURE_CARDS = [
