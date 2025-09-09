@@ -475,25 +475,23 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Company Icons Section - Horizontal Row */}
-      <section className="relative py-16 overflow-hidden w-full bg-gradient-to-b from-slate-900 to-slate-800">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative max-w-6xl mx-auto px-4"
-        >
-          <motion.p 
-            className="text-center text-gray-300 text-lg mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+      {/* Company Icons Scrolling Bar */}
+      <section className="relative py-8 overflow-hidden w-full bg-gradient-to-b from-slate-900 to-slate-800">
+        <div className="flex items-center">
+          {/* Scrolling Company Icons */}
+          <motion.div
+            className="flex items-center gap-8 whitespace-nowrap"
+            animate={{ x: [0, -100] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 20,
+                ease: "linear",
+              },
+            }}
           >
-            Jobs from top companies available on our platform
-          </motion.p>
-          
-          {/* Horizontal Company Icons Row */}
-          <div className="flex flex-wrap justify-center items-center gap-6">
+            {/* First set of icons */}
             {[
               { name: "Google", color: "from-blue-500 to-blue-600" },
               { name: "Microsoft", color: "from-green-500 to-green-600" },
@@ -512,36 +510,50 @@ const LandingPage: React.FC = () => {
               { name: "Dropbox", color: "from-blue-600 to-blue-700" },
               { name: "GitHub", color: "from-gray-700 to-gray-800" }
             ].map((company, index) => (
-              <motion.div
-                key={company.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: 0.6 + (index * 0.05),
-                  ease: "easeOut"
-                }}
-                whileHover={{ 
-                  scale: 1.1, 
-                  y: -5,
-                  transition: { duration: 0.2 }
-                }}
-                className="group relative"
+              <div
+                key={`first-${company.name}`}
+                className="flex-shrink-0"
               >
-                <div className={`w-12 h-12 bg-gradient-to-r ${company.color} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                  <span className="text-white font-bold text-xs">
+                <div className={`w-16 h-16 bg-gradient-to-r ${company.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                  <span className="text-white font-bold text-lg">
                     {company.name.charAt(0)}
                   </span>
                 </div>
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-xs font-medium whitespace-nowrap">
-                    {company.name}
+              </div>
+            ))}
+            
+            {/* Duplicate set for seamless loop */}
+            {[
+              { name: "Google", color: "from-blue-500 to-blue-600" },
+              { name: "Microsoft", color: "from-green-500 to-green-600" },
+              { name: "Apple", color: "from-gray-600 to-gray-700" },
+              { name: "Amazon", color: "from-orange-500 to-orange-600" },
+              { name: "Meta", color: "from-blue-600 to-blue-700" },
+              { name: "Netflix", color: "from-red-500 to-red-600" },
+              { name: "Spotify", color: "from-green-600 to-green-700" },
+              { name: "Uber", color: "from-gray-700 to-gray-800" },
+              { name: "Airbnb", color: "from-pink-500 to-pink-600" },
+              { name: "Tesla", color: "from-red-600 to-red-700" },
+              { name: "Stripe", color: "from-purple-500 to-purple-600" },
+              { name: "Shopify", color: "from-green-500 to-green-600" },
+              { name: "Slack", color: "from-purple-600 to-purple-700" },
+              { name: "Zoom", color: "from-blue-500 to-blue-600" },
+              { name: "Dropbox", color: "from-blue-600 to-blue-700" },
+              { name: "GitHub", color: "from-gray-700 to-gray-800" }
+            ].map((company, index) => (
+              <div
+                key={`second-${company.name}`}
+                className="flex-shrink-0"
+              >
+                <div className={`w-16 h-16 bg-gradient-to-r ${company.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                  <span className="text-white font-bold text-lg">
+                    {company.name.charAt(0)}
                   </span>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Don't Search, Swipe Section - Ultra Modern with Parallax */}
