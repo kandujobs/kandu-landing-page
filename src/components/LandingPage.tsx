@@ -131,19 +131,7 @@ const LandingPage: React.FC = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [swipeDirection, setSwipeDirection] = useState<'left' | 'right'>('right');
   const [showFloatingHeader, setShowFloatingHeader] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  
   const { scrollYProgress } = useScroll();
-  
-  // Mouse tracking for interactive effects
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
 
 
@@ -255,9 +243,9 @@ const LandingPage: React.FC = () => {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             {/* Simple badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full mb-8"
             >
@@ -301,20 +289,20 @@ const LandingPage: React.FC = () => {
                 className="bg-white/10 backdrop-blur-xl text-white font-semibold py-5 px-10 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-3"
               >
                 <span className="text-lg">
-                  {isLoading ? (
-                    <>
+                {isLoading ? (
+                  <>
                       <motion.div 
                         className="animate-spin rounded-full h-5 w-5 border-b-2 border-white inline-block mr-2"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                       />
                       Redirecting...
-                    </>
-                  ) : (
-                    <>
+                  </>
+                ) : (
+                  <>
                       Get Started
-                    </>
-                  )}
+                  </>
+                )}
                 </span>
               </motion.button>
               
