@@ -129,7 +129,6 @@ const MorphingBlob = ({ delay = 0, size = 200, color = "purple", style = {} }) =
 const LandingPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
-  const [showEndState, setShowEndState] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState<'left' | 'right'>('right');
   const [showFloatingHeader, setShowFloatingHeader] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -162,29 +161,16 @@ const LandingPage: React.FC = () => {
 
   const handleApply = () => {
     setSwipeDirection('right'); // Apply swipes right
-    const nextIndex = currentCardIndex + 1;
-    if (nextIndex < FEATURE_CARDS.length) {
-      setTimeout(() => setCurrentCardIndex(nextIndex), 50);
-    } else {
-      setTimeout(() => setShowEndState(true), 50);
-    }
+    const nextIndex = (currentCardIndex + 1) % FEATURE_CARDS.length;
+    setTimeout(() => setCurrentCardIndex(nextIndex), 50);
   };
 
   const handlePass = () => {
     setSwipeDirection('left'); // Pass swipes left
-    const nextIndex = currentCardIndex + 1;
-    if (nextIndex < FEATURE_CARDS.length) {
-      setTimeout(() => setCurrentCardIndex(nextIndex), 50);
-    } else {
-      setTimeout(() => setShowEndState(true), 50);
-    }
+    const nextIndex = (currentCardIndex + 1) % FEATURE_CARDS.length;
+    setTimeout(() => setCurrentCardIndex(nextIndex), 50);
   };
 
-  const resetCards = () => {
-    setCurrentCardIndex(0);
-    setShowEndState(false);
-    setSwipeDirection('right');
-  };
 
   // Handle scroll for floating header
   React.useEffect(() => {
@@ -787,21 +773,20 @@ const LandingPage: React.FC = () => {
           {/* Feature Card Container - Ultra Modern */}
           <div className="relative max-w-lg mx-auto px-4">
             <AnimatePresence mode="wait">
-              {!showEndState ? (
-                <motion.div
-                  key={currentCardIndex}
-                  initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
-                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                  exit={{ 
-                    opacity: 0, 
-                    x: swipeDirection === 'right' ? 300 : -300, 
-                    rotate: swipeDirection === 'right' ? 15 : -15,
-                    scale: 0.8
-                  }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="relative bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20 overflow-hidden"
-                  style={{ transformStyle: "preserve-3d" }}
-                >
+              <motion.div
+                key={currentCardIndex}
+                initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
+                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                exit={{ 
+                  opacity: 0, 
+                  x: swipeDirection === 'right' ? 300 : -300, 
+                  rotate: swipeDirection === 'right' ? 15 : -15,
+                  scale: 0.8
+                }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="relative bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20 overflow-hidden"
+                style={{ transformStyle: "preserve-3d" }}
+              >
                   {/* Animated background gradient */}
                   <motion.div
                     className={`absolute inset-0 bg-gradient-to-br ${FEATURE_CARDS[currentCardIndex].gradient} opacity-20`}
@@ -935,105 +920,7 @@ const LandingPage: React.FC = () => {
                       <span>Apply</span>
                     </motion.button>
                   </motion.div>
-
-
                 </motion.div>
-              ) : (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
-                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="relative bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20 text-center overflow-hidden"
-                  style={{ transformStyle: "preserve-3d" }}
-                >
-                  {/* Animated background */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20"
-                    animate={{
-                      background: [
-                        "linear-gradient(45deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))",
-                        "linear-gradient(225deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))",
-                        "linear-gradient(45deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))"
-                      ]
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  
-                  <motion.div 
-                    className="text-8xl mb-8 relative z-10"
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      rotate: [0, 10, -10, 0]
-                    }}
-                    transition={{ 
-                      duration: 2, 
-                      repeat: Infinity, 
-                      ease: "easeInOut" 
-                    }}
-                  >
-                    🎉
-                  </motion.div>
-                  
-                  <motion.h3 
-                    className="text-4xl font-bold text-white mb-6 relative z-10"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                  >
-                    What are you waiting for?
-                  </motion.h3>
-                  
-                  <motion.p 
-                    className="text-gray-200 mb-10 text-xl leading-relaxed relative z-10"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                  >
-                    You've seen how easy it is to find great jobs. Now it's time to start your journey!
-                  </motion.p>
-                  
-                  <motion.button
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={handleGetStarted}
-                    disabled={isLoading}
-                    className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-5 px-10 rounded-2xl hover:from-purple-600 hover:to-blue-600 transition-all duration-200 flex items-center space-x-3 mx-auto shadow-lg hover:shadow-purple-500/25 relative z-10"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                  >
-                    {isLoading ? (
-                      <>
-                        <motion.div 
-                          className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                        />
-                        <span>Redirecting...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Get Started</span>
-                      </>
-                    )}
-                  </motion.button>
-                  
-                  <motion.button
-                    onClick={resetCards}
-                    className="mt-6 text-purple-300 hover:text-purple-200 font-medium transition-colors relative z-10"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    Try again
-                  </motion.button>
-                </motion.div>
-              )}
             </AnimatePresence>
           </div>
         </div>
