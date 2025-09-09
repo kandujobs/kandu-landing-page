@@ -389,27 +389,20 @@ const LandingPage: React.FC = () => {
                 />
                 
                 <span className="relative z-10 text-lg">
-                {isLoading ? (
-                  <>
+                  {isLoading ? (
+                    <>
                       <motion.div 
                         className="animate-spin rounded-full h-5 w-5 border-b-2 border-white inline-block mr-2"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                       />
                       Redirecting...
-                  </>
-                ) : (
-                  <>
-                      Get Started Free
-                      <motion.div
-                        className="inline-block ml-2"
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        <FiArrowRight className="w-5 h-5" />
-                      </motion.div>
-                  </>
-                )}
+                    </>
+                  ) : (
+                    <>
+                      Get Started
+                    </>
+                  )}
                 </span>
               </motion.button>
               
@@ -497,9 +490,12 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Don't Search, Swipe Section - Ultra Modern with Parallax */}
-      <section className="relative py-32 overflow-hidden w-full bg-gradient-to-b from-slate-900 to-slate-800">
+      <section className="relative py-32 overflow-hidden w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+        {/* Smooth transition overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/50 to-transparent pointer-events-none" />
+        
         {/* Parallax background layers */}
-            <motion.div
+        <motion.div
           className="absolute inset-0"
           style={{ y: useTransform(scrollYProgress, [0, 1], [0, -100]) }}
         >
@@ -999,13 +995,7 @@ const LandingPage: React.FC = () => {
                       </>
                     ) : (
                       <>
-                        <span>Sign Up Free</span>
-                        <motion.div
-                          animate={{ x: [0, 5, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                        >
-                        <FiArrowRight className="w-5 h-5" />
-                        </motion.div>
+                        <span>Get Started</span>
                       </>
                     )}
                   </motion.button>
@@ -1303,8 +1293,7 @@ const LandingPage: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <span>Get Started for Free</span>
-                  <FiArrowRight className="w-5 h-5" />
+                  <span>Get Started</span>
                 </>
               )}
             </motion.button>
