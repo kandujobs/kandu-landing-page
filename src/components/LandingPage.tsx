@@ -325,7 +325,7 @@ const LandingPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Job search for
+              More interviews,
               <motion.span 
                 className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent"
             animate={{
@@ -340,7 +340,7 @@ const LandingPage: React.FC = () => {
                   backgroundSize: "200% 200%"
                 }}
               >
-                busy young people
+                less effort
               </motion.span>
             </motion.h1>
             
@@ -350,7 +350,7 @@ const LandingPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Apply to jobs in 5-minute sessions. No desk setup required. 
+              Apply to jobs in 5-minute sessions. 
               <span className="text-white font-semibold"> Perfect for young professionals</span> juggling work, life, and everything in between.
             </motion.p>
             
@@ -491,33 +491,6 @@ const LandingPage: React.FC = () => {
               >
                 Trusted by <span className="text-white font-semibold">thousands of young professionals</span> worldwide
               </motion.p>
-              
-              {/* Animated stats */}
-              <motion.div 
-                className="flex justify-center space-x-8 mt-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 2 }}
-              >
-                {[
-                  { icon: <FiUsers className="w-6 h-6" />, number: "10K+", label: "Active Users" },
-                  { icon: <FiAward className="w-6 h-6" />, number: "50K+", label: "Jobs Applied" },
-                  { icon: <FiStar className="w-6 h-6" />, number: "4.8★", label: "Rating" }
-                ].map((stat, index) => (
-                  <motion.div 
-                    key={index}
-                    className="text-center"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="text-purple-400 mb-2 flex justify-center">
-                      {stat.icon}
-                    </div>
-                    <div className="text-white font-bold text-2xl">{stat.number}</div>
-                    <div className="text-gray-400 text-sm">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </motion.div>
             </motion.div>
           </motion.div>
         </div>
