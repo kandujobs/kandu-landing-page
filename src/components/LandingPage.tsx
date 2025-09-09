@@ -979,12 +979,10 @@ const LandingPage: React.FC = () => {
 
 
 
-      {/* Now in Beta Section */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 w-full">
-        {/* Smooth transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-50/50 pointer-events-none" />
-        
-        {/* Animated Background */}
+
+      {/* FAQ Section - Modern Dark Styling */}
+      <section id="faq-section" className="relative py-24 overflow-hidden w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <motion.div
             animate={{ 
@@ -995,7 +993,7 @@ const LandingPage: React.FC = () => {
               repeat: Infinity, 
               ease: "linear" 
             }}
-            className="absolute inset-0 opacity-10"
+            className="absolute inset-0 opacity-20"
             style={{
               backgroundImage: `radial-gradient(circle at 20% 80%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #3b82f6 0%, transparent 50%)`,
               backgroundSize: '100% 100%',
@@ -1003,126 +1001,8 @@ const LandingPage: React.FC = () => {
           />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          {/* Beta Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8"
-          >
-            <div className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-full shadow-md">
-              <span className="font-semibold text-sm">Now in Beta</span>
-            </div>
-          </motion.div>
-
-          {/* Animated Headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center mb-6"
-          >
-            <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
-            >
-              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Effortless
-              </span>
-              <br />
-              <span className="text-gray-900">cover letters and resumes
-              </span>
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
-            >
-              Let us do the work and create professional, tailored application materials in seconds.
-            </motion.p>
-          </motion.div>
-
-          {/* Animated Feature Cards */}
-          <div className="grid md:grid-cols-2 gap-8 mt-16">
-            {/* AI-Generated Resume */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              whileHover={{ 
-                y: -5, 
-                transition: { duration: 0.3 }
-              }}
-              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-            >
-              <div className="relative z-10">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mr-6 shadow-md">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">AI-Generated Resume</h3>
-                    <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
-                  </div>
-                </div>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  Simplify the process with resumes tailored to <strong className="text-purple-600">showcase your skills</strong> and <strong className="text-blue-600">match job requirements</strong>, all in just a few clicks.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* AI-Generated Cover Letter */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              whileHover={{ 
-                y: -5, 
-                transition: { duration: 0.3 }
-              }}
-              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-            >
-              <div className="relative z-10">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mr-6 shadow-md">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">AI-Generated Cover Letter</h3>
-                    <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
-                  </div>
-                </div>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  Easily create personalized <strong className="text-blue-600">cover letters</strong> that <strong className="text-indigo-600">highlight your value</strong> and make every application stand out.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section id="faq-section" className="relative py-16 overflow-hidden w-full" style={{ backgroundColor: '#f0f4ff' }}>
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"></div>
-        
-        {/* Subtle Pattern Overlay */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-200 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-indigo-200 rounded-full blur-2xl"></div>
-        </div>
+        {/* Floating Particles */}
+        <FloatingParticles />
 
         {/* Content */}
         <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
@@ -1130,61 +1010,146 @@ const LandingPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 px-4">
+            <motion.h2 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                Frequently Asked
+              </span>
+              <br />
+              <span className="text-white">Questions</span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            >
               Everything you need to know about Kandu's AI-powered job search platform.
-            </p>
+            </motion.p>
           </motion.div>
 
-          {/* FAQ Preview Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* FAQ Preview Cards - Glassmorphism */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
               {
                 question: "How does Kandu's AI job matching work?",
-                preview: "Our AI learns your preferences through your swipes and interactions..."
+                preview: "Our AI learns your preferences through your swipes and interactions, creating personalized job recommendations that match your skills and interests.",
+                gradient: "from-purple-500 to-blue-500"
               },
               {
                 question: "Is the auto-apply feature really automatic?",
-                preview: "Yes! Once you set up your preferences and resume, our AI can automatically apply..."
+                preview: "Yes! Once you set up your preferences and resume, our AI can automatically apply to jobs that match your criteria, saving you hours of work.",
+                gradient: "from-blue-500 to-indigo-500"
               },
               {
                 question: "How much does Kandu cost?",
-                preview: "Kandu is currently free for all users. Our premium plans will launch soon..."
+                preview: "Kandu is currently free for all users. Our premium plans with advanced features will launch soon.",
+                gradient: "from-indigo-500 to-purple-500"
               }
             ].map((faq, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 cursor-pointer"
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.02,
+                  transition: { duration: 0.3 }
+                }}
+                className="group relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20 overflow-hidden cursor-pointer"
                 onClick={() => window.location.href = '/blog'}
               >
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
-                <p className="text-gray-600 text-sm">{faq.preview}</p>
-                <div className="mt-4 flex items-center text-purple-600 font-semibold text-sm">
-                  <span>Read full answer</span>
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                {/* Animated background gradient */}
+                <motion.div
+                  className={`absolute inset-0 bg-gradient-to-br ${faq.gradient} opacity-10`}
+                  animate={{
+                    background: [
+                      `linear-gradient(45deg, ${faq.gradient.split(' ')[1]}, ${faq.gradient.split(' ')[3]})`,
+                      `linear-gradient(225deg, ${faq.gradient.split(' ')[1]}, ${faq.gradient.split(' ')[3]})`,
+                      `linear-gradient(45deg, ${faq.gradient.split(' ')[1]}, ${faq.gradient.split(' ')[3]})`
+                    ]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                
+                {/* Shimmer effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                  animate={{
+                    x: ['-100%', '100%']
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                
+                <div className="relative z-10">
+                  <motion.h3 
+                    className="text-xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
+                  >
+                    {faq.question}
+                  </motion.h3>
+                  <motion.p 
+                    className="text-gray-300 leading-relaxed mb-6"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
+                  >
+                    {faq.preview}
+                  </motion.p>
+                  <motion.div 
+                    className="flex items-center text-purple-300 font-semibold text-sm group-hover:text-purple-200 transition-colors"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 + (index * 0.1) }}
+                  >
+                    <span>Read full answer</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
           </div>
           
-          {/* View All FAQ Button */}
+          {/* View All FAQ Button - Modern Styling */}
           <div className="text-center">
             <motion.button
               onClick={() => window.location.href = '/blog'}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-3 px-8 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="relative bg-white/10 backdrop-blur-xl text-white font-semibold py-4 px-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-200 shadow-lg hover:shadow-xl overflow-hidden group"
             >
-              View All FAQ Articles
+              {/* Shimmer effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                animate={{
+                  x: ['-100%', '100%']
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <span className="relative z-10">View All FAQ Articles</span>
             </motion.button>
           </div>
         </div>
