@@ -50,35 +50,6 @@ const FEATURE_CARDS = [
   }
 ];
 
-// Floating particles component
-const FloatingParticles = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(50)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-white/20 rounded-full"
-          animate={{
-            y: [0, -100, 0],
-            x: [0, Math.random() * 100 - 50, 0],
-            opacity: [0, 1, 0],
-            scale: [0, 1, 0],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: Math.random() * 2,
-          }}
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-        />
-      ))}
-    </div>
-  );
-};
 
 
 // FAQ Item Component
