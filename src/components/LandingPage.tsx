@@ -260,9 +260,22 @@ const LandingPage: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               More interviews,
-              <span className="block text-gray-300">
+              <motion.span 
+                className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent"
+            animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+            }}
+            transition={{
+                  duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+                style={{
+                  backgroundSize: "200% 200%"
+                }}
+              >
                 less effort
-              </span>
+              </motion.span>
             </motion.h1>
             
             <motion.p 
@@ -470,19 +483,13 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Don't Search, Swipe Section - Ultra Modern with Parallax */}
-      <section className="relative py-32 overflow-hidden w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-        {/* Enhanced smooth transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/30 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-transparent to-slate-800/20 pointer-events-none" />
-        
-        {/* Parallax background layers */}
-        <motion.div
-          className="absolute inset-0"
-          style={{ y: useTransform(scrollYProgress, [0, 1], [0, -100]) }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20" />
-        </motion.div>
+      {/* Don't Search, Swipe Section - Consistent Background */}
+      <section className="relative py-32 overflow-hidden w-full">
+        {/* Simple dark background matching hero */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-800/50 to-slate-900/50" />
+        </div>
         
 
         {/* Content */}
@@ -500,9 +507,22 @@ const LandingPage: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Don't search,{' '}
-              <span className="text-gray-300">
+              <motion.span 
+                className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent"
+            animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+            }}
+            transition={{
+                  duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+                style={{
+                  backgroundSize: "200% 200%"
+                }}
+              >
                 swipe
-              </span>
+              </motion.span>
             </motion.h2>
             
           <motion.div
@@ -836,8 +856,13 @@ const LandingPage: React.FC = () => {
 
 
         
-      {/* FAQ Section - Modern Dark Styling */}
-      <section id="faq-section" className="relative py-24 overflow-hidden w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* FAQ Section - Consistent Background */}
+      <section id="faq-section" className="relative py-24 overflow-hidden w-full">
+        {/* Simple dark background matching hero */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-800/50 to-slate-900/50" />
+        </div>
 
 
         {/* Content */}
@@ -854,9 +879,11 @@ const LandingPage: React.FC = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <span className="text-white">
-                Frequently Asked Questions
+              <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                Frequently Asked
               </span>
+              <br />
+              <span className="text-white">Questions</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -948,13 +975,13 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section - Moved to Bottom */}
+      {/* CTA Section - Consistent Background */}
       <section className="relative py-16 overflow-hidden w-full">
-        {/* Smooth transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-50/40 via-transparent to-transparent pointer-events-none" />
-        
-        {/* Simple Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600" />
+        {/* Simple dark background matching hero */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-800/50 to-slate-900/50" />
+        </div>
 
         {/* Content */}
         <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center">
