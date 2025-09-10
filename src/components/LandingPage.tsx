@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiHeart, FiTrendingUp, FiCheck, FiSmartphone, FiUsers } from 'react-icons/fi';
 
 // Feature cards data for the interactive swiper
@@ -80,48 +80,6 @@ const FloatingParticles = () => {
   );
 };
 
-// Morphing blob component
-const MorphingBlob = ({ delay = 0, size = 200, color = "purple", style = {} }) => {
-  const [path, setPath] = useState("M0,0 C50,0 50,100 0,100 C-50,100 -50,0 0,0");
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const newPath = `M0,0 C${50 + Math.random() * 50},0 ${50 + Math.random() * 50},${100 + Math.random() * 50} 0,${100 + Math.random() * 50} C${-50 - Math.random() * 50},${100 + Math.random() * 50} ${-50 - Math.random() * 50},0 0,0`;
-      setPath(newPath);
-    }, 3000 + Math.random() * 2000);
-    
-    return () => clearInterval(interval);
-  }, []);
-  
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: 0.1, scale: 1 }}
-      transition={{ duration: 2, delay }}
-      className="absolute"
-      style={{
-        width: size,
-        height: size,
-        filter: 'blur(40px)',
-        ...style
-      }}
-    >
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 200 200"
-        className={`text-${color}-500`}
-      >
-        <motion.path
-          d={path}
-          fill="currentColor"
-          animate={{ d: path }}
-          transition={{ duration: 3, ease: "easeInOut" }}
-        />
-      </svg>
-    </motion.div>
-  );
-};
 
 // FAQ Item Component
 
@@ -131,7 +89,6 @@ const LandingPage: React.FC = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [swipeDirection, setSwipeDirection] = useState<'left' | 'right'>('right');
   const [showFloatingHeader, setShowFloatingHeader] = useState(false);
-  const { scrollYProgress } = useScroll();
 
 
 
@@ -285,7 +242,7 @@ const LandingPage: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               Apply to jobs in 5-minute sessions. 
-              <span className="text-white font-semibold"> Perfect for young professionals</span> juggling work, life, and everything in between.
+              <span className="text-white font-semibold"> Perfect for those</span> juggling work, life, and everything in between.
             </motion.p>
             
             <motion.div 
