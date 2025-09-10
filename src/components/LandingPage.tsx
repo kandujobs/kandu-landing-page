@@ -360,7 +360,7 @@ const LandingPage: React.FC = () => {
           {/* Scrolling Company Icons */}
             <motion.div
             className="flex items-center gap-8 whitespace-nowrap"
-            animate={{ x: [0, -200] }}
+            animate={{ x: [0, -400] }}
               transition={{
               x: {
                 repeat: Infinity,
