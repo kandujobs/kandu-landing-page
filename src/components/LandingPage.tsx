@@ -199,14 +199,18 @@ const LandingPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            {/* Simple badge */}
+            {/* Colored badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full mb-8"
+              className="inline-flex items-center bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded-full mb-8 shadow-lg"
             >
-              <div className="w-2 h-2 bg-gray-400 rounded-full mr-2" />
+          <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                className="w-2 h-2 bg-white rounded-full mr-2"
+              />
               <span className="text-sm font-medium">Now in Beta</span>
             </motion.div>
             
@@ -254,11 +258,31 @@ const LandingPage: React.FC = () => {
               <motion.button
                 onClick={handleGetStarted}
                 disabled={isLoading}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-white/10 backdrop-blur-xl text-white font-semibold py-5 px-10 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-3"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-5 px-10 rounded-2xl overflow-hidden shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-3"
               >
-                <span className="text-lg">
+                {/* Animated background */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+                
+                {/* Shimmer effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  animate={{
+                    x: ['-100%', '100%']
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <span className="relative z-10 text-lg">
                 {isLoading ? (
                   <>
                       <motion.div 
@@ -352,7 +376,7 @@ const LandingPage: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.7 }}
               >
-                Trusted by <span className="text-white font-semibold">thousands of young professionals</span> worldwide
+                Trusted by <span className="text-white font-semibold">young professionals</span> worldwide
               </motion.p>
             </motion.div>
           </motion.div>
@@ -588,27 +612,12 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Interactive Feature Cards Section - Ultra Modern */}
-      <section className="relative py-32 overflow-hidden w-full bg-gradient-to-b from-slate-800 to-slate-900">
-        {/* Dynamic background with particles */}
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{
-              background: [
-                "radial-gradient(circle at 25% 25%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 75% 75%, #3b82f6 0%, transparent 50%)",
-                "radial-gradient(circle at 75% 25%, #8b5cf6 0%, transparent 50%), radial-gradient(circle at 25% 75%, #3b82f6 0%, transparent 50%)"
-              ]
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute inset-0 opacity-20"
-          />
-          
-          {/* Floating particles */}
-          <FloatingParticles />
+      {/* Interactive Feature Cards Section - Consistent Background */}
+      <section className="relative py-32 overflow-hidden w-full">
+        {/* Simple dark background matching hero */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-800/50 to-slate-900/50" />
         </div>
 
         {/* Content */}
